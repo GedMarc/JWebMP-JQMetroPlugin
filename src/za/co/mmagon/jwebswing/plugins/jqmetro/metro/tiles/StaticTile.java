@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
 
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+
 /**
  *
  * @author GedMarc
@@ -23,8 +25,13 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
  * @version 1.0
  *
  */
+@ComponentInformation(name = "Static Tile",
+        description = "A static tile",
+        url = "http://www.drewgreenwell.com/projects/metrojs")
 public class StaticTile extends Tile<StaticTileAttributes>
 {
+
+    private static final long serialVersionUID = 1L;
 
     public StaticTile()
     {

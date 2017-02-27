@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
 
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+
 /**
  *
  * @author GedMarc
@@ -23,6 +25,9 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
  * @version 1.0
  *
  */
+@ComponentInformation(name = "Flip Tile",
+        description = "flip tile mode to flip between two tile faces",
+        url = "http://www.drewgreenwell.com/projects/metrojs")
 public class FlipTile extends Tile<FlipTileAttributes>
 {
 

@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.jqmetro.metro;
 
 import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileAccentThemes;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
 
@@ -28,6 +29,9 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
  * @since 29 Aug 2015
  * @version 1.0
  */
+@ComponentInformation(name = "Metro Tiles",
+         description = "All tile modes support swapping content with images or html at random or sequentially from an array",
+         url = "http://www.drewgreenwell.com/projects/metrojs")
 public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetroFeatures, JQMetroEvents, JQMetroTiles>
 {
 

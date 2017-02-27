@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
 
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+
 /**
  * A JQMetro Fade Tile. Configure with attributes
  *
@@ -24,8 +26,13 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
  * @version 1.0
  *
  */
+@ComponentInformation(name = "Fading Tile",
+        description = "slide tile mode to stop at an arbitrary number of points to reveal or slide with the tile face behind it (e.g. Me tile, or the animated clouds on the projects page)",
+        url = "http://www.drewgreenwell.com/projects/metrojs")
 public class FadeTile extends Tile<FadeTileAttributes>
 {
+
+    private static final long serialVersionUID = 1L;
 
     public FadeTile()
     {
