@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,22 +19,20 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
- *
  * @author GedMarc
- * @since Aug 30, 2016
  * @version 1.0
- *
+ * @since Aug 30, 2016
  */
 @ComponentInformation(name = "Flip List Tile",
-        description = "flip-list tile mode to flip any number of tiles in sequence or at custom intervals to create mosaics and other unique content presentations (e.g. People tile or the color strip, skills tile, and the hover list on the home page)",
-        url = "http://www.drewgreenwell.com/projects/metrojs")
-public class FlipListTile extends Tile<FlipListTileAttributes>
+		description = "flip-list tile mode to flip any number of tiles in sequence or at custom intervals to create mosaics and other unique content presentations (e.g. People tile or the color strip, skills tile, and the hover list on the home page)",
+		url = "http://www.drewgreenwell.com/projects/metrojs")
+public class FlipListTile extends Tile<FlipListTileAttributes, FlipListTile>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public FlipListTile()
-    {
+	public FlipListTile()
+	{
 
-    }
+	}
 }

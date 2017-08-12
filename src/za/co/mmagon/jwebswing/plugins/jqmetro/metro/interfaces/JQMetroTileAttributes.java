@@ -17,10 +17,9 @@
 package za.co.mmagon.jwebswing.plugins.jqmetro.metro.interfaces;
 
 /**
- *
  * @author GedMarc
  */
 public interface JQMetroTileAttributes
 {
-    
+
 }

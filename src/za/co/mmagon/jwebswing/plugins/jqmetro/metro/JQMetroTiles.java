@@ -23,114 +23,115 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
 
 /**
  * The implementation of JQuery Metro JS http://www.drewgreenwell.com/projects/metrojs
- *
  * <p>
+ * <p>
+ *
  * @author Marc Magon
- * @since 29 Aug 2015
  * @version 1.0
+ * @since 29 Aug 2015
  */
 @ComponentInformation(name = "Metro Tiles",
-         description = "All tile modes support swapping content with images or html at random or sequentially from an array",
-         url = "http://www.drewgreenwell.com/projects/metrojs")
+		description = "All tile modes support swapping content with images or html at random or sequentially from an array",
+		url = "http://www.drewgreenwell.com/projects/metrojs")
 public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetroFeatures, JQMetroEvents, JQMetroTiles>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private JQMetroFeature feature;
+	private JQMetroFeature feature;
 
-    /**
-     * Constructs a default tile group of blue and four
-     */
-    public JQMetroTiles()
-    {
-        this(TileAccentThemes.Blue, TileCount.four);
-    }
+	/**
+	 * Constructs a default tile group of blue and four
+	 */
+	public JQMetroTiles()
+	{
+		this(TileAccentThemes.Blue, TileCount.four);
+	}
 
-    /**
-     * Construct a new tile group with themes and tile counts
-     *
-     * @param theme The theme
-     * @param tileCount The tile count
-     */
-    public JQMetroTiles(TileAccentThemes theme, TileCount tileCount)
-    {
-        addClass("tiles");
-        addClass("tile-group");
+	/**
+	 * Construct a new tile group with themes and tile counts
+	 *
+	 * @param theme     The theme
+	 * @param tileCount The tile count
+	 */
+	public JQMetroTiles(TileAccentThemes theme, TileCount tileCount)
+	{
+		addClass("tiles");
+		addClass("tile-group");
 
-        setTheme(theme);
-        setTileCount(tileCount);
+		setTheme(theme);
+		setTileCount(tileCount);
 
-        addFeature(getFeature());
-    }
+		addFeature(getFeature());
+	}
 
-    /**
-     * Returns the Metro JQuery Feature
-     *
-     * @return
-     */
-    protected final JQMetroFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQMetroFeature(this);
-        }
-        return feature;
-    }
+	/**
+	 * Returns the Metro JQuery Feature
+	 *
+	 * @return
+	 */
+	protected final JQMetroFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQMetroFeature(this);
+		}
+		return feature;
+	}
 
-    /**
-     * Returns the options
-     *
-     * @return
-     */
-    @Override
-    public JQMetroOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
+	/**
+	 * Returns the options
+	 *
+	 * @return
+	 */
+	@Override
+	public JQMetroOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
 
-    /**
-     * Removes any applied colour themes
-     */
-    private void removeExistingThemes()
-    {
-        for (TileAccentThemes theme : TileAccentThemes.values())
-        {
-            removeClass(theme.toString());
-        }
-    }
+	/**
+	 * Removes any applied colour themes
+	 */
+	private void removeExistingThemes()
+	{
+		for (TileAccentThemes theme : TileAccentThemes.values())
+		{
+			removeClass(theme.toString());
+		}
+	}
 
-    /**
-     * Remove existing tiles
-     */
-    private void removeExistingTileCounts()
-    {
-        for (TileCount tileCount : TileCount.values())
-        {
-            removeClass(tileCount.toString());
-        }
-    }
+	/**
+	 * Remove existing tiles
+	 */
+	private void removeExistingTileCounts()
+	{
+		for (TileCount tileCount : TileCount.values())
+		{
+			removeClass(tileCount.toString());
+		}
+	}
 
-    /**
-     * Sets the current tile accent theme
-     *
-     * @param theme
-     */
-    public final void setTheme(TileAccentThemes theme)
-    {
-        removeExistingThemes();
-        addClass(theme.toString());
-    }
+	/**
+	 * Sets the current tile accent theme
+	 *
+	 * @param theme
+	 */
+	public final void setTheme(TileAccentThemes theme)
+	{
+		removeExistingThemes();
+		addClass(theme.toString());
+	}
 
-    /**
-     * Sets the current tile count
-     *
-     * @param theme
-     */
-    public final void setTileCount(TileCount theme)
-    {
-        removeExistingTileCounts();
-        addClass(theme.toString());
-    }
+	/**
+	 * Sets the current tile count
+	 *
+	 * @param theme
+	 */
+	public final void setTileCount(TileCount theme)
+	{
+		removeExistingTileCounts();
+		addClass(theme.toString());
+	}
 
 }

@@ -20,24 +20,23 @@ import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.interfaces.JQMetroTileAttributes;
 
 /**
- *
  * @author GedMarc
- * @since Aug 30, 2016
  * @version 1.0
- * 
+ * @since Aug 30, 2016
  */
-public enum FlipListTileAttributes implements JQMetroTileAttributes, AttributeDefinitions 
+public enum FlipListTileAttributes implements JQMetroTileAttributes, AttributeDefinitions
 {
-    
-    ;
-    private FlipListTileAttributes ()
-    {
-        
-    }
 
-    @Override
-    public boolean isKeyword()
-    {
-        return false;
-    }
+	;
+
+	private FlipListTileAttributes()
+	{
+
+	}
+
+	@Override
+	public boolean isKeyword()
+	{
+		return false;
+	}
 }

@@ -19,21 +19,19 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.references;
 import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 
 /**
- *
  * @author GedMarc
- * @since Mar 2, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 2, 2015
  */
 public class JQMetroJavascriptReference extends JavascriptReference
 {
 
-    /**
-     *
-     */
-    public JQMetroJavascriptReference()
-    {
-        super("JWMetroJavascriptReference", 1.0, "bower_components/metrojs/release/MetroJs.Full/MetroJs.js");
-    }
+	/**
+	 *
+	 */
+	public JQMetroJavascriptReference()
+	{
+		super("JWMetroJavascriptReference", 1.0, "bower_components/metrojs/release/MetroJs.Full/MetroJs.js");
+	}
 }

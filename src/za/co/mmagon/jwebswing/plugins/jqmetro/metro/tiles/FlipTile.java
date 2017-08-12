@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,23 +19,21 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
- *
  * @author GedMarc
- * @since Aug 30, 2016
  * @version 1.0
- *
+ * @since Aug 30, 2016
  */
 @ComponentInformation(name = "Flip Tile",
-        description = "flip tile mode to flip between two tile faces",
-        url = "http://www.drewgreenwell.com/projects/metrojs")
-public class FlipTile extends Tile<FlipTileAttributes>
+		description = "flip tile mode to flip between two tile faces",
+		url = "http://www.drewgreenwell.com/projects/metrojs")
+public class FlipTile extends Tile<FlipTileAttributes, FlipTile>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public FlipTile()
-    {
+	public FlipTile()
+	{
 
-    }
+	}
 
 }

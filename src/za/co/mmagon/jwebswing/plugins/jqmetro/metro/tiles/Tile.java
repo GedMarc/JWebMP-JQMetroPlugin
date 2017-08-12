@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,239 +28,254 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileProportions;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.interfaces.JQMetroTileAttributes;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.interfaces.JQMetroTileChildren;
-import za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles.IMetroTile;
 
 /**
  * A Tile
  * <p>
- * @author MMagon
+ *
  * @param <A> A valid set of attributes for a metro JS tile
- * @since 13 Sep 2013
+ * @param <J>
+ *
+ * @author MMagon
  * @version 1.0
+ * @since 13 Sep 2013
  */
-public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDefinitions>
-        extends Div<JQMetroTileChildren, A, GlobalFeatures, GlobalEvents, Tile> implements JQMetroChildren, IMetroTile
+public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDefinitions, J extends Tile<A, J>>
+		extends Div<JQMetroTileChildren, A, GlobalFeatures, GlobalEvents, J>
+		implements JQMetroChildren, IMetroTile<J>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * The tile proportion - tall or half
+	/**
+	 * The tile proportion - tall or half
+	 */
+	private TileProportions tileProportion;
+
+	/**
+	 * Denotes a live tile
+	 */
+	public Tile()
+	{
+		addClass("live-tile");
+	}
+
+	/**
+	 * Sets the new tiles proportion
+	 *
+	 * @param tileProportion
+	 */
+	public Tile(TileProportions tileProportion)
+	{
+		this.tileProportion = tileProportion;
+		addClass("live-tile");
+	}
+
+	/**
+	 * Returns this tiles configurable properties
+	 *
+	 * @return
+	 */
+	public IMetroTile asTile()
+	{
+		return this;
+	}
+
+	/**
+	 * Sets the tile proportion
+	 *
+	 * @return
+	 */
+	@Override
+	public TileProportions getTileProportion()
+	{
+		return tileProportion;
+	}
+
+	/**
+	 * Returns the tile proportion
+	 *
+	 * @param tileProportion
+	 */
+	@Override
+	public J setTileProportion(TileProportions tileProportion)
+	{
+		removeClass("half" + this.tileProportion + "");
+		removeClass("");
+		this.tileProportion = tileProportion;
+		addClass(tileProportion == null ? "" : "half" + tileProportion + "");
+		return (J) this;
+	}
+
+	/**
+	 * Returns the tile title
+	 *
+	 * @return
+	 */
+	/*
+     * @Override
+     * public Div getTileTitle()
+     * {
+     * return tileTitle;
+     * }
      */
-    private TileProportions tileProportion;
-
-    /**
-     * Denotes a live tile
-     */
-    public Tile()
-    {
-        addClass("live-tile");
-    }
-
-    /**
-     * Sets the new tiles proportion
+	/**
+	 * Sets the tile title
+	 *
+	 * @param tileTitle
+	 */
+    /*
+     * @Override
+     * public void setTileTitle(Div tileTitle)
+     * {
+     * if(this.tileTitle != null)
+     * {
+     * remove(this.tileTitle);
+     * }
+     * this.tileTitle = tileTitle;
      *
-     * @param tileProportion
+     * if(tileTitle != null)
+     * {
+     * tileTitle.addClass("tile-title");
+     * //add(this.tileTitle);
+     * }
+     * }
      */
-    public Tile(TileProportions tileProportion)
-    {
-        this.tileProportion = tileProportion;
-        addClass("live-tile");
-    }
 
-    /**
-     * Returns this tiles configurable properties
-     *
-     * @return
-     */
-    public IMetroTile asTile()
-    {
-        return this;
-    }
+	/**
+	 * Removes any applied colour themes
+	 */
+	private void removeExistingThemes()
+	{
+		for (TileAccentThemes theme : TileAccentThemes.values())
+		{
+			removeClass(theme.toString());
+		}
+	}
 
-    /**
-     * Sets the tile proportion
-     *
-     * @return
-     */
-    @Override
-    public TileProportions getTileProportion()
-    {
-        return tileProportion;
-    }
+	/**
+	 * Remove existing tiles
+	 */
+	private void removeExistingTileCounts()
+	{
+		for (TileCount tileCount : TileCount.values())
+		{
+			removeClass(tileCount.toString());
+		}
+	}
 
-    /**
-     * Returns the tile proportion
-     *
-     * @param tileProportion
-     */
-    @Override
-    public void setTileProportion(TileProportions tileProportion)
-    {
-        removeClass("half" + this.tileProportion + "");
-        removeClass("");
-        this.tileProportion = tileProportion;
-        addClass(tileProportion == null ? "" : "half" + tileProportion + "");
-    }
+	/**
+	 * Sets the current tile accent theme
+	 *
+	 * @param theme
+	 */
+	@Override
+	public J setTheme(TileAccentThemes theme)
+	{
+		removeExistingThemes();
+		addClass(theme.toString());
+		return (J) this;
+	}
 
-    /**
-     * Returns the tile title
-     *
-     * @return
-     */
-    /*@Override
-    public Div getTileTitle()
-    {
-        return tileTitle;
-    }*/
-    /**
-     * Sets the tile title
-     *
-     * @param tileTitle
-     */
-    /*@Override
-    public void setTileTitle(Div tileTitle)
-    {
-        if(this.tileTitle != null)
-        {
-            remove(this.tileTitle);
-        }
-        this.tileTitle = tileTitle;
+	/**
+	 * Sets the current tile count
+	 *
+	 * @param theme
+	 */
+	@Override
+	public J setTileCount(TileCount theme)
+	{
+		removeExistingTileCounts();
+		addClass(theme.toString());
+		return (J) this;
+	}
 
-        if(tileTitle != null)
-        {
-            tileTitle.addClass("tile-title");
-            //add(this.tileTitle);
-        }
-    }*/
-    /**
-     * Removes any applied colour themes
-     */
-    private void removeExistingThemes()
-    {
-        for (TileAccentThemes theme : TileAccentThemes.values())
-        {
-            removeClass(theme.toString());
-        }
-    }
+	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>     Any Div
+	 * @param newFace The new face to add
+	 * @param title
+	 *
+	 * @return The input div
+	 */
+	@Override
+	public <T extends Div> J addFace(T newFace, String title)
+	{
+		getChildren().add(newFace);
+		Span titleDiv = new Span();
+		titleDiv.addClass("tile-title");
+		titleDiv.add(title);
+		newFace.add(titleDiv);
+		return (J) this;
+	}
 
-    /**
-     * Remove existing tiles
-     */
-    private void removeExistingTileCounts()
-    {
-        for (TileCount tileCount : TileCount.values())
-        {
-            removeClass(tileCount.toString());
-        }
-    }
+	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>     Any Div
+	 * @param newFace The new face to add
+	 * @param title
+	 *
+	 * @return The input div
+	 */
+	@Override
+	public <T extends Div> J addFace(T newFace, ComponentHierarchyBase title)
+	{
+		getChildren().add(newFace);
+		title.addClass("tile-title");
+		newFace.add(title);
+		return (J) this;
+	}
 
-    /**
-     * Sets the current tile accent theme
-     *
-     * @param theme
-     */
-    @Override
-    public void setTheme(TileAccentThemes theme)
-    {
-        removeExistingThemes();
-        addClass(theme.toString());
-    }
+	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>      Any Div
+	 * @param position The position in the array
+	 * @param newFace  The new face to add
+	 *
+	 * @return The input div
+	 */
+	@Override
+	public <T extends Div> J addFace(int position, T newFace, ComponentHierarchyBase title)
+	{
+		getChildren().add(position, newFace);
+		title.addClass("tile-title");
+		newFace.add(title);
+		return (J) this;
+	}
 
-    /**
-     * Sets the current tile count
-     *
-     * @param theme
-     */
-    @Override
-    public void setTileCount(TileCount theme)
-    {
-        removeExistingTileCounts();
-        addClass(theme.toString());
-    }
+	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>      Any Div
+	 * @param newFace  The new face to add
+	 * @param title
+	 * @param position
+	 *
+	 * @return The input div
+	 */
+	@Override
+	public <T extends Div> J addFace(int position, T newFace, String title)
+	{
+		getChildren().add(position, newFace);
+		Span titleDiv = new Span();
+		titleDiv.addClass("tile-title");
+		titleDiv.add(title);
+		newFace.add(titleDiv);
+		return (J) this;
+	}
 
-    /**
-     * Adds a new tile face
-     *
-     * @param <T> Any Div
-     * @param newFace The new face to add
-     * @param title
-     * @return The input div
-     */
-    @Override
-    public <T extends Div> T addFace(T newFace, String title)
-    {
-        getChildren().add(newFace);
-        Span titleDiv = new Span();
-        titleDiv.addClass("tile-title");
-        titleDiv.add(title);
-        newFace.add(titleDiv);
-        return newFace;
-    }
-
-    /**
-     * Adds a new tile face
-     *
-     * @param <T> Any Div
-     * @param newFace The new face to add
-     * @param title
-     * @return The input div
-     */
-    @Override
-    public <T extends Div> T addFace(T newFace, ComponentHierarchyBase title)
-    {
-        getChildren().add(newFace);
-        title.addClass("tile-title");
-        newFace.add(title);
-        return newFace;
-    }
-
-    /**
-     * Adds a new tile face
-     *
-     * @param <T> Any Div
-     * @param position The position in the array
-     * @param newFace The new face to add
-     * @return The input div
-     */
-    @Override
-    public <T extends Div> T addFace(int position, T newFace, ComponentHierarchyBase title)
-    {
-        getChildren().add(position, newFace);
-        title.addClass("tile-title");
-        newFace.add(title);
-        return newFace;
-    }
-
-    /**
-     * Adds a new tile face
-     *
-     * @param <T> Any Div
-     * @param newFace The new face to add
-     * @param title
-     * @param position
-     * @return The input div
-     */
-    @Override
-    public <T extends Div> T addFace(int position, T newFace, String title)
-    {
-        getChildren().add(position, newFace);
-        Span titleDiv = new Span();
-        titleDiv.addClass("tile-title");
-        titleDiv.add(title);
-        newFace.add(titleDiv);
-        return newFace;
-    }
-
-    /**
-     * Removes the face from the collection
-     *
-     * @param <T> The face to remove
-     * @param oldFace The old face
-     */
-    @Override
-    public <T extends Div> void removeFace(T oldFace)
-    {
-        getChildren().remove(oldFace);
-    }
+	/**
+	 * Removes the face from the collection
+	 *
+	 * @param <T>     The face to remove
+	 * @param oldFace The old face
+	 */
+	@Override
+	public <T extends Div> void removeFace(T oldFace)
+	{
+		getChildren().remove(oldFace);
+	}
 }

@@ -20,24 +20,23 @@ import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.interfaces.JQMetroTileAttributes;
 
 /**
- *
  * @author GedMarc
- * @since Aug 30, 2016
  * @version 1.0
- * 
+ * @since Aug 30, 2016
  */
-public enum SlideTileAttributes implements JQMetroTileAttributes, AttributeDefinitions 
+public enum SlideTileAttributes implements JQMetroTileAttributes, AttributeDefinitions
 {
-    
-    ;
-    private SlideTileAttributes ()
-    {
-        
-    }
 
-    @Override
-    public boolean isKeyword()
-    {
-        return false;
-    }
+	;
+
+	private SlideTileAttributes()
+	{
+
+	}
+
+	@Override
+	public boolean isKeyword()
+	{
+		return false;
+	}
 }

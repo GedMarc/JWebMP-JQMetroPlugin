@@ -17,19 +17,18 @@
 package za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations;
 
 /**
- * 
  * @author MMagon
- * @since 13 Sep 2013
  * @version 1.0
+ * @since 13 Sep 2013
  */
-public enum TileProportions 
+public enum TileProportions
 {
-    Tall,
-    Tile;
+	Tall,
+	Tile;
 
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase();
-    }
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase();
+	}
 }

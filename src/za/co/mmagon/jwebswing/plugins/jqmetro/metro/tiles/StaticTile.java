@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,22 +19,20 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.tiles;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
- *
  * @author GedMarc
- * @since Aug 30, 2016
  * @version 1.0
- *
+ * @since Aug 30, 2016
  */
 @ComponentInformation(name = "Static Tile",
-        description = "A static tile",
-        url = "http://www.drewgreenwell.com/projects/metrojs")
-public class StaticTile extends Tile<StaticTileAttributes>
+		description = "A static tile",
+		url = "http://www.drewgreenwell.com/projects/metrojs")
+public class StaticTile extends Tile<StaticTileAttributes, StaticTile>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public StaticTile()
-    {
+	public StaticTile()
+	{
 
-    }
+	}
 }

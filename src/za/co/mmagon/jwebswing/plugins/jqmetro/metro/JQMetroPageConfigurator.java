@@ -21,43 +21,41 @@ import za.co.mmagon.jwebswing.PageConfigurator;
 import za.co.mmagon.jwebswing.plugins.PluginInformation;
 
 /**
- *
  * @author GedMarc
  * @since 26 Feb 2017
- *
  */
 @PluginInformation(pluginName = "MetroJS",
-                   pluginUniqueName = "metro-js",
-                   pluginDescription = "Metro JS is a JavaScript plugin for jQuery developed to easily enable Metro interfaces on the web. This release focuses on Live Tiles, the Application Bar and Theming. It's early in the development phase, but all features should work on at least IE7+(Win/WinPhone), Firefox, Chrome, Android, Opera, and Safari(OSX/iOS).",
-                   pluginVersion = "0.9.77",
-                   pluginDependancyUniqueIDs = "",
-                   pluginCategories = "tiles, icons,themes,fliptiles",
-                   pluginSubtitle = "Want to make a 'Me' tile or a 'People' tile like you see on Windows Phone for your website? Metro JS makes it easy!",
-                   pluginGitUrl = "https://github.com/GedMarc/JWebSwing-JQMetroPlugin",
-                   pluginSourceUrl = "http://www.drewgreenwell.com/projects/metrojs/theme-generator",
-                   pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-JQMetroPlugin/wiki",
-                   pluginOriginalHomepage = "http://www.drewgreenwell.com/projects/metrojs",
-                   pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQMetroPlugin.jar/download")
+		pluginUniqueName = "metro-js",
+		pluginDescription = "Metro JS is a JavaScript plugin for jQuery developed to easily enable Metro interfaces on the web. This release focuses on Live Tiles, the Application Bar and Theming. It's early in the development phase, but all features should work on at least IE7+(Win/WinPhone), Firefox, Chrome, Android, Opera, and Safari(OSX/iOS).",
+		pluginVersion = "0.9.77",
+		pluginDependancyUniqueIDs = "",
+		pluginCategories = "tiles, icons,themes,fliptiles",
+		pluginSubtitle = "Want to make a 'Me' tile or a 'People' tile like you see on Windows Phone for your website? Metro JS makes it easy!",
+		pluginGitUrl = "https://github.com/GedMarc/JWebSwing-JQMetroPlugin",
+		pluginSourceUrl = "http://www.drewgreenwell.com/projects/metrojs/theme-generator",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-JQMetroPlugin/wiki",
+		pluginOriginalHomepage = "http://www.drewgreenwell.com/projects/metrojs",
+		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQMetroPlugin.jar/download")
 public class JQMetroPageConfigurator extends PageConfigurator
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * A new instance of the page configurator
-     */
-    public JQMetroPageConfigurator()
-    {
+	/**
+	 * A new instance of the page configurator
+	 */
+	public JQMetroPageConfigurator()
+	{
 
-    }
+	}
 
-    @Override
-    public Page configure(Page page)
-    {
-        if (!page.isConfigured())
-        {
+	@Override
+	public Page configure(Page page)
+	{
+		if (!page.isConfigured())
+		{
 
-        }
-        return page;
-    }
+		}
+		return page;
+	}
 }

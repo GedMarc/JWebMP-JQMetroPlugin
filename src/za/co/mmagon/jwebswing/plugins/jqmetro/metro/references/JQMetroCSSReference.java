@@ -19,21 +19,19 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.references;
 import za.co.mmagon.jwebswing.base.references.CSSReference;
 
 /**
- *
  * @author GedMarc
- * @since Mar 2, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 2, 2015
  */
 public class JQMetroCSSReference extends CSSReference
 {
 
-    /**
-     *
-     */
-    public JQMetroCSSReference()
-    {
-        super("JWMetroCSSReference", 1.0, "bower_components/metrojs/release/MetroJs.Full/MetroJs.css");
-    }
+	/**
+	 *
+	 */
+	public JQMetroCSSReference()
+	{
+		super("JWMetroCSSReference", 1.0, "bower_components/metrojs/release/MetroJs.Full/MetroJs.css");
+	}
 }

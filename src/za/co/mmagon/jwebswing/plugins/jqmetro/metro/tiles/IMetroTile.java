@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,97 +23,105 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileProportions;
 
 /**
- *
  * @author GedMarc
  * @since Sep 26, 2016
- * 
  */
-public interface IMetroTile 
+public interface IMetroTile<J>
 {
 
-    /**
-     * Adds a new tile face
-     * @param <T> Any Div
-     * @param newFace The new face to add
-     * @param title The title of the tile
-     * @return The input div
-     */
-    <T extends Div> T addFace(T newFace,String title);
-    
-    /**
-     * Adds a new tile face
-     * @param <T> Any Div
-     * @param newFace The new face to add
-     * @param title The title of the tile
-     * @return The input div
-     */
-    <T extends Div> T addFace(T newFace,ComponentHierarchyBase title);
+	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>     Any Div
+	 * @param newFace The new face to add
+	 * @param title   The title of the tile
+	 *
+	 * @return The input div
+	 */
+	<T extends Div> J addFace(T newFace, String title);
 
-    /**
-     * Adds a new tile face
-     * @param <T> Any Div
-     * @param position The position in the array
-     * @param newFace The new face to add
-     * @param title The title of the tile
-     * @return The input div
-     */
-    <T extends Div> T addFace(int position, T newFace,String title);
-    
-    /**
-     * Adds a new tile face
-     * @param <T> Any Div
-     * @param position The position in the array
-     * @param newFace The new face to add
-     * @param title The title of the tile
-     * @return The input div
-     */
-    <T extends Div> T addFace(int position, T newFace,ComponentHierarchyBase title);
+	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>     Any Div
+	 * @param newFace The new face to add
+	 * @param title   The title of the tile
+	 *
+	 * @return The input div
+	 */
+	<T extends Div> J addFace(T newFace, ComponentHierarchyBase title);
 
-    /**
-     * Sets the tile proportion
-     *
-     * @return
-     */
-    TileProportions getTileProportion();
+	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>      Any Div
+	 * @param position The position in the array
+	 * @param newFace  The new face to add
+	 * @param title    The title of the tile
+	 *
+	 * @return The input div
+	 */
+	<T extends Div> J addFace(int position, T newFace, String title);
 
-    /**
-     * Returns the tile title
-     *
-     * @return
-     */
-  //  Div getTileTitle();
+	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>      Any Div
+	 * @param position The position in the array
+	 * @param newFace  The new face to add
+	 * @param title    The title of the tile
+	 *
+	 * @return The input div
+	 */
+	<T extends Div> J addFace(int position, T newFace, ComponentHierarchyBase title);
 
-    /**
-     * Removes the face from the collection
-     * @param <T> The face to remove
-     * @param oldFace The old face
-     */
-    <T extends Div> void removeFace(T oldFace);
+	/**
+	 * Sets the tile proportion
+	 *
+	 * @return
+	 */
+	TileProportions getTileProportion();
 
-    /**
-     * Sets the current tile accent theme
-     * @param theme
-     */
-    void setTheme(TileAccentThemes theme);
+	/**
+	 * Returns the tile title
+	 *
+	 * @return
+	 */
+	//  Div getTileTitle();
 
-    /**
-     * Sets the current tile count
-     * @param theme
-     */
-    void setTileCount(TileCount theme);
+	/**
+	 * Removes the face from the collection
+	 *
+	 * @param <T>     The face to remove
+	 * @param oldFace The old face
+	 */
+	<T extends Div> void removeFace(T oldFace);
 
-    /**
-     * Returns the tile proportion
-     *
-     * @param tileProportion
-     */
-    void setTileProportion(TileProportions tileProportion);
+	/**
+	 * Sets the current tile accent theme
+	 *
+	 * @param theme
+	 */
+	J setTheme(TileAccentThemes theme);
 
-    /**
-     * Sets the tile title
-     *
-     * @param tileTitle
-     */
-  //  void setTileTitle(Div tileTitle);
+	/**
+	 * Sets the current tile count
+	 *
+	 * @param theme
+	 */
+	J setTileCount(TileCount theme);
 
+	/**
+	 * Returns the tile proportion
+	 *
+	 * @param tileProportion
+	 */
+	J setTileProportion(TileProportions tileProportion);
+
+	/**
+	 * Sets the tile title
+	 *
+	 * @param tileTitle
+	 */
+	//  void setTileTitle(Div tileTitle);
 }

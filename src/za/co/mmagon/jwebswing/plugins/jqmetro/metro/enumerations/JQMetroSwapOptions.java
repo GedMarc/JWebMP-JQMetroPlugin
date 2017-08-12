@@ -25,12 +25,12 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations;
 public enum JQMetroSwapOptions
 {
 
-    html, image;
+	html, image;
 
-    @Override
-    public String toString()
-    {
-        return super.toString();
-    }
+	@Override
+	public String toString()
+	{
+		return super.toString();
+	}
 
 }

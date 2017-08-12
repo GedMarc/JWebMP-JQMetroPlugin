@@ -18,28 +18,29 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations;
 
 /**
  * How many tiles wide
+ *
  * @author MMagon
- * @since 13 Sep 2013
  * @version 1.0
+ * @since 13 Sep 2013
  */
-public enum TileCount 
+public enum TileCount
 {
-    one,
-    two,
-    three,
-    four,
-    five,
-    six,
-    seven,
-    eight,
-    nine,
-    ten;
+	one,
+	two,
+	three,
+	four,
+	five,
+	six,
+	seven,
+	eight,
+	nine,
+	ten;
 
-    @Override
-    public String toString()
-    {
-        return super.toString() + "-wide";
-    }
-    
-    
+	@Override
+	public String toString()
+	{
+		return super.toString() + "-wide";
+	}
+
+
 }

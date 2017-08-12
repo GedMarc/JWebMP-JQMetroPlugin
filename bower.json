@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-	"metrojs": "^0.9.77"
+    "metrojs": "^0.9.77"
   }
 }

@@ -16,59 +16,59 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqMetro.metro;
 
-import za.co.mmagon.jwebswing.plugins.jqmetro.metro.JQMetroTiles;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
+import za.co.mmagon.jwebswing.plugins.jqmetro.metro.JQMetroTiles;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileAccentThemes;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.references.JQMetroJavascriptReference;
 
+import static org.junit.Assert.assertEquals;
+
 /**
- *
  * @author GedMarc
  */
 public class JQMetroTileTest extends BaseTestClass
 {
-    
-    public JQMetroTileTest()
-    {
-    }
-    
-    @Before
-    public void setUp()
-    {
-    }
 
-    /**
-     * Test of getFeature method, of class JQMetroTiles.
-     */
-    @Test
-    public void testGroup()
-    {
-        Page p = getPage();
-        JQMetroTiles instance = new JQMetroTiles();
-        instance.setID("id");
-        instance.setTheme(TileAccentThemes.Cobalt);
-        System.out.println(instance.toString(true));
-        String expResult = "<div class=\"tiles tile-group four-wide cobalt\" id=\"id\"></div>";
-        String result = instance.toString(true);
-        assertEquals(expResult, result);
-    }
+	public JQMetroTileTest()
+	{
+	}
 
-    @Test
-    public void testJavascriptLinks()
-    {
-        Page p = getPage();
-        JQMetroTiles instance = new JQMetroTiles();
-        instance.setID("id");
-        instance.setTheme(TileAccentThemes.Cobalt);
-        System.out.println(instance.getJavascriptReferencesAll());
-        String expResult = "[bower_components/metrojs/release/MetroJs.Full/MetroJs.js]";
-        String result = "[" + new JQMetroJavascriptReference().getLocalReference() + "]";
-        assertEquals(expResult, result);
-    }
-    
-    
+	@Before
+	public void setUp()
+	{
+	}
+
+	/**
+	 * Test of getFeature method, of class JQMetroTiles.
+	 */
+	@Test
+	public void testGroup()
+	{
+		Page p = getPage();
+		JQMetroTiles instance = new JQMetroTiles();
+		instance.setID("id");
+		instance.setTheme(TileAccentThemes.Cobalt);
+		System.out.println(instance.toString(true));
+		String expResult = "<div class=\"tiles tile-group four-wide cobalt\" id=\"id\"></div>";
+		String result = instance.toString(true);
+		assertEquals(expResult, result);
+	}
+
+	@Test
+	public void testJavascriptLinks()
+	{
+		Page p = getPage();
+		JQMetroTiles instance = new JQMetroTiles();
+		instance.setID("id");
+		instance.setTheme(TileAccentThemes.Cobalt);
+		System.out.println(instance.getJavascriptReferencesAll());
+		String expResult = "[bower_components/metrojs/release/MetroJs.Full/MetroJs.js]";
+		String result = "[" + new JQMetroJavascriptReference().getLocalReference() + "]";
+		assertEquals(expResult, result);
+	}
+
+
 }

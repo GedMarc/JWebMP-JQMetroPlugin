@@ -18,38 +18,39 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations;
 
 /**
  * An enumeration of the "out-the-box" tile themes
+ *
  * @author MMagon
- * @since 13 Sep 2013
  * @version 1.0
+ * @since 13 Sep 2013
  */
-public enum TileAccentThemes 
+public enum TileAccentThemes
 {
-    Amber,
-    Blue,
-    Brown,
-    Cobalt,
-    Crimson,
-    Cyan,
-    Magenta,
-    Lime,
-    Indigo,
-    Green,
-    Emerald,
-    Mango,
-    Mauve,
-    Olive,
-    Orange,
-    Pink,
-    Red,
-    Sienna,
-    Steel,
-    Teal,
-    Violet,
-    Yellow;
+	Amber,
+	Blue,
+	Brown,
+	Cobalt,
+	Crimson,
+	Cyan,
+	Magenta,
+	Lime,
+	Indigo,
+	Green,
+	Emerald,
+	Mango,
+	Mauve,
+	Olive,
+	Orange,
+	Pink,
+	Red,
+	Sienna,
+	Steel,
+	Teal,
+	Violet,
+	Yellow;
 
-    @Override
-    public String toString()
-    {
-        return super.toString().toLowerCase(); 
-    }
+	@Override
+	public String toString()
+	{
+		return super.toString().toLowerCase();
+	}
 }

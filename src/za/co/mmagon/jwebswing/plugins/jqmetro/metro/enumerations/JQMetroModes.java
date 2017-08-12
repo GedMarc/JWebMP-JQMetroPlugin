@@ -24,35 +24,35 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations;
  */
 public enum JQMetroModes
 {
-    /**
-     * slide any number of tile faces infinitely or slide to a specific tile face
-     */
-    carousel,
-    /**
-     * fade the front face in and out
-     */
-    fade,
-    /**
-     * slide two tile faces at an arbitrary number of stopping points
-     */
-    slide,
-    /**
-     * flip two tile faces in a vertical or horizontal direction
-     */
-    flip,
-    /**
-     * trigger a list of tiles to flip between tile faces with custom delays
-     */
-    flip_list,
-    /**
-     * no animations are performed. This is useful if you just want to bind a bounce, click or link to the tile.
-     */
-    none;
+	/**
+	 * slide any number of tile faces infinitely or slide to a specific tile face
+	 */
+	carousel,
+	/**
+	 * fade the front face in and out
+	 */
+	fade,
+	/**
+	 * slide two tile faces at an arbitrary number of stopping points
+	 */
+	slide,
+	/**
+	 * flip two tile faces in a vertical or horizontal direction
+	 */
+	flip,
+	/**
+	 * trigger a list of tiles to flip between tile faces with custom delays
+	 */
+	flip_list,
+	/**
+	 * no animations are performed. This is useful if you just want to bind a bounce, click or link to the tile.
+	 */
+	none;
 
-    @Override
-    public String toString()
-    {
-        return super.toString().replace('_', '-');
-    }
+	@Override
+	public String toString()
+	{
+		return super.toString().replace('_', '-');
+	}
 
 }

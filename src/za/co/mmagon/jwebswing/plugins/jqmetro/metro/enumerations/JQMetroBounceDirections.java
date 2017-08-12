@@ -25,12 +25,12 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations;
 public enum JQMetroBounceDirections
 {
 
-    all, edges, corners, c, tl, tr, bl, br, t, l, b, r;
+	all, edges, corners, c, tl, tr, bl, br, t, l, b, r;
 
-    @Override
-    public String toString()
-    {
-        return super.toString();
-    }
+	@Override
+	public String toString()
+	{
+		return super.toString();
+	}
 
 }
