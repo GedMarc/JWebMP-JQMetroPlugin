@@ -71,8 +71,12 @@ public class JQMetroFeature extends Feature<JQMetroOptions, JQMetroFeature> impl
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		String requiredString = "$('.live-tile').liveTile(";
-		requiredString += getOptions().toString();
+		String requiredString = "$('.live-tile').liveTile('rebind'";
+		String options = getOptions().toString();
+		if(!options.isEmpty())
+		{
+			requiredString += getOptions().toString();
+		}
 		requiredString += ");" + getNewLine();
 		addQuery(requiredString);
 
