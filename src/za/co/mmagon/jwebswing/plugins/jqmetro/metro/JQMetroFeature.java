@@ -19,8 +19,6 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
-import za.co.mmagon.jwebswing.plugins.jqmetro.metro.references.JQMetroCSSReference;
-import za.co.mmagon.jwebswing.plugins.jqmetro.metro.references.JQMetroJavascriptReference;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -31,13 +29,13 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.references.JQMetroJavascript
  */
 public class JQMetroFeature extends Feature<JQMetroOptions, JQMetroFeature> implements JQMetroFeatures, GlobalFeatures
 {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	@JsonIgnore
 	private final JQMetroTiles forComponent;
 	private JQMetroOptions options;
-
+	
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component. Adds the tooltip text as the Title attribute to the component
 	 * <p>
@@ -48,10 +46,8 @@ public class JQMetroFeature extends Feature<JQMetroOptions, JQMetroFeature> impl
 	{
 		super("JQMetroFeature");
 		this.forComponent = forComponent;
-		getJavascriptReferences().add(new JQMetroJavascriptReference());
-		getCssReferences().add(new JQMetroCSSReference());
 	}
-
+	
 	/**
 	 * Returns all the tooltip options
 	 * <p>
@@ -67,18 +63,18 @@ public class JQMetroFeature extends Feature<JQMetroOptions, JQMetroFeature> impl
 		}
 		return options;
 	}
-
+	
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		String requiredString = "$('.live-tile').liveTile('rebind'";
 		String options = getOptions().toString();
-		if(!options.isEmpty())
+		if (!options.isEmpty())
 		{
 			requiredString += getOptions().toString();
 		}
 		requiredString += ");" + getNewLine();
 		addQuery(requiredString);
-
+		
 	}
 }

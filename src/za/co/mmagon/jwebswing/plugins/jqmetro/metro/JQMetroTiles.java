@@ -35,11 +35,11 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
 		url = "http://www.drewgreenwell.com/projects/metrojs")
 public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetroFeatures, JQMetroEvents, JQMetroTiles>
 {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private JQMetroFeature feature;
-
+	
 	/**
 	 * Constructs a default tile group of blue and four
 	 */
@@ -47,7 +47,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 	{
 		this(TileAccentThemes.Blue, TileCount.four);
 	}
-
+	
 	/**
 	 * Construct a new tile group with themes and tile counts
 	 *
@@ -58,13 +58,13 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 	{
 		addClass("tiles");
 		addClass("tile-group");
-
+		
 		setTheme(theme);
 		setTileCount(tileCount);
-
+		
 		addFeature(getFeature());
 	}
-
+	
 	/**
 	 * Returns the Metro JQuery Feature
 	 *
@@ -78,7 +78,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 		}
 		return feature;
 	}
-
+	
 	/**
 	 * Returns the options
 	 *
@@ -89,7 +89,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 	{
 		return getFeature().getOptions();
 	}
-
+	
 	/**
 	 * Removes any applied colour themes
 	 */
@@ -100,7 +100,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 			removeClass(theme.toString());
 		}
 	}
-
+	
 	/**
 	 * Remove existing tiles
 	 */
@@ -111,7 +111,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 			removeClass(tileCount.toString());
 		}
 	}
-
+	
 	/**
 	 * Sets the current tile accent theme
 	 *
@@ -122,7 +122,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 		removeExistingThemes();
 		addClass(theme.toString());
 	}
-
+	
 	/**
 	 * Sets the current tile count
 	 *
@@ -133,5 +133,5 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 		removeExistingTileCounts();
 		addClass(theme.toString());
 	}
-
+	
 }

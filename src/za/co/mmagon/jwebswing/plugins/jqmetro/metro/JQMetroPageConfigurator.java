@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.PageConfigurator;
 import za.co.mmagon.jwebswing.plugins.PluginInformation;
+import za.co.mmagon.jwebswing.plugins.jqmetro.metro.references.JQMetroCSSReference;
+import za.co.mmagon.jwebswing.plugins.jqmetro.metro.references.JQMetroJavascriptReference;
 
 /**
  * @author GedMarc
@@ -38,23 +40,24 @@ import za.co.mmagon.jwebswing.plugins.PluginInformation;
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQMetroPlugin.jar/download")
 public class JQMetroPageConfigurator extends PageConfigurator
 {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	/**
 	 * A new instance of the page configurator
 	 */
 	public JQMetroPageConfigurator()
 	{
-
+	
 	}
-
+	
 	@Override
 	public Page configure(Page page)
 	{
 		if (!page.isConfigured())
 		{
-
+			page.getBody().getJavascriptReferences().add(new JQMetroJavascriptReference());
+			page.getBody().getCssReferences().add(new JQMetroCSSReference());
 		}
 		return page;
 	}

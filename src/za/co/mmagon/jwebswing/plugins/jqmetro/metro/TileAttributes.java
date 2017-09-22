@@ -30,17 +30,17 @@ public enum TileAttributes implements AttributeDefinitions
 	data_direction,
 	data_mode,
 	data_link;
-
+	
 	@Override
 	public String toString()
 	{
 		return super.toString().replace('_', '-');
 	}
-
+	
 	@Override
 	public boolean isKeyword()
 	{
 		return false;
 	}
-
+	
 }

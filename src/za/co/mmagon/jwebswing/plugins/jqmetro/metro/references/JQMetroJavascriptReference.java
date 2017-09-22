@@ -26,7 +26,7 @@ import za.co.mmagon.jwebswing.base.references.JavascriptReference;
  */
 public class JQMetroJavascriptReference extends JavascriptReference
 {
-
+	
 	/**
 	 *
 	 */
