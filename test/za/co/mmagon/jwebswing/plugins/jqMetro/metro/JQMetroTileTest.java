@@ -16,15 +16,15 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqMetro.metro;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.JQMetroTiles;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileAccentThemes;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.references.JQMetroJavascriptReference;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author GedMarc
@@ -35,8 +35,8 @@ public class JQMetroTileTest extends BaseTestClass
 	public JQMetroTileTest()
 	{
 	}
-
-	@Before
+	
+	@BeforeAll
 	public void setUp()
 	{
 	}
