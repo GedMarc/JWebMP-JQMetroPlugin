@@ -29,13 +29,13 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
  */
 public class JQMetroFeature extends Feature<JQMetroOptions, JQMetroFeature> implements JQMetroFeatures, GlobalFeatures
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@JsonIgnore
 	private final JQMetroTiles forComponent;
 	private JQMetroOptions options;
-	
+
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component. Adds the tooltip text as the Title attribute to the component
 	 * <p>
@@ -47,7 +47,7 @@ public class JQMetroFeature extends Feature<JQMetroOptions, JQMetroFeature> impl
 		super("JQMetroFeature");
 		this.forComponent = forComponent;
 	}
-	
+
 	/**
 	 * Returns all the tooltip options
 	 * <p>
@@ -63,18 +63,51 @@ public class JQMetroFeature extends Feature<JQMetroOptions, JQMetroFeature> impl
 		}
 		return options;
 	}
-	
+
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		String requiredString = "$('.live-tile').liveTile('rebind'";
-		String options = getOptions().toString();
-		if (!options.isEmpty())
+		String queryOptions = getOptions().toString();
+		if (!queryOptions.isEmpty())
 		{
 			requiredString += getOptions().toString();
 		}
 		requiredString += ");" + getNewLine();
 		addQuery(requiredString);
-		
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQMetroFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQMetroFeature that = (JQMetroFeature) o;
+
+		if (forComponent != null ? !forComponent.equals(that.forComponent) : that.forComponent != null)
+		{
+			return false;
+		}
+		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (forComponent != null ? forComponent.hashCode() : 0);
+		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
+		return result;
 	}
 }

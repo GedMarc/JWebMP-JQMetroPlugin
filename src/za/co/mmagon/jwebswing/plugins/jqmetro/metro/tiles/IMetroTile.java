@@ -28,7 +28,6 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileProportions
  */
 public interface IMetroTile<J>
 {
-
 	/**
 	 * Adds a new tile face
 	 *
@@ -83,13 +82,6 @@ public interface IMetroTile<J>
 	TileProportions getTileProportion();
 
 	/**
-	 * Returns the tile title
-	 *
-	 * @return
-	 */
-	//  Div getTileTitle();
-
-	/**
 	 * Removes the face from the collection
 	 *
 	 * @param <T>     The face to remove
@@ -117,11 +109,4 @@ public interface IMetroTile<J>
 	 * @param tileProportion
 	 */
 	J setTileProportion(TileProportions tileProportion);
-
-	/**
-	 * Sets the tile title
-	 *
-	 * @param tileTitle
-	 */
-	//  void setTileTitle(Div tileTitle);
 }

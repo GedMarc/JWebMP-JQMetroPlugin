@@ -40,17 +40,17 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.references.JQMetroJavascript
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQMetroPlugin.jar/download")
 public class JQMetroPageConfigurator extends PageConfigurator
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * A new instance of the page configurator
 	 */
 	public JQMetroPageConfigurator()
 	{
-	
+		//Nothing needed
 	}
-	
+
 	@Override
 	public Page configure(Page page)
 	{

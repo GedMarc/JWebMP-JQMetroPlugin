@@ -25,6 +25,7 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
  * The implementation of JQuery Metro JS http://www.drewgreenwell.com/projects/metrojs
  * <p>
  * <p>
+ * TODO update to CRP
  *
  * @author Marc Magon
  * @version 1.0
@@ -35,11 +36,11 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
 		url = "http://www.drewgreenwell.com/projects/metrojs")
 public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetroFeatures, JQMetroEvents, JQMetroTiles>
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private JQMetroFeature feature;
-	
+
 	/**
 	 * Constructs a default tile group of blue and four
 	 */
@@ -47,24 +48,26 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 	{
 		this(TileAccentThemes.Blue, TileCount.four);
 	}
-	
+
 	/**
 	 * Construct a new tile group with themes and tile counts
 	 *
-	 * @param theme     The theme
-	 * @param tileCount The tile count
+	 * @param theme
+	 * 		The theme
+	 * @param tileCount
+	 * 		The tile count
 	 */
 	public JQMetroTiles(TileAccentThemes theme, TileCount tileCount)
 	{
 		addClass("tiles");
 		addClass("tile-group");
-		
+
 		setTheme(theme);
 		setTileCount(tileCount);
-		
+
 		addFeature(getFeature());
 	}
-	
+
 	/**
 	 * Returns the Metro JQuery Feature
 	 *
@@ -78,7 +81,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 		}
 		return feature;
 	}
-	
+
 	/**
 	 * Returns the options
 	 *
@@ -89,7 +92,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 	{
 		return getFeature().getOptions();
 	}
-	
+
 	/**
 	 * Removes any applied colour themes
 	 */
@@ -100,7 +103,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 			removeClass(theme.toString());
 		}
 	}
-	
+
 	/**
 	 * Remove existing tiles
 	 */
@@ -111,7 +114,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 			removeClass(tileCount.toString());
 		}
 	}
-	
+
 	/**
 	 * Sets the current tile accent theme
 	 *
@@ -122,7 +125,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 		removeExistingThemes();
 		addClass(theme.toString());
 	}
-	
+
 	/**
 	 * Sets the current tile count
 	 *
@@ -133,5 +136,33 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 		removeExistingTileCounts();
 		addClass(theme.toString());
 	}
-	
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQMetroTiles))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQMetroTiles that = (JQMetroTiles) o;
+
+		return getFeature() != null ? getFeature().equals(that.getFeature()) : that.getFeature() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getFeature() != null ? getFeature().hashCode() : 0);
+		return result;
+	}
 }
