@@ -81,7 +81,7 @@ public class JQMetroOptions extends JavaScriptPart
 
 	public JQMetroOptions()
 	{
-
+		//Nothing Needed
 	}
 
 	public JQMetroModes getMode()

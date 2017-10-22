@@ -21,6 +21,8 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileAccentThemes;
 import za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations.TileCount;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * The implementation of JQuery Metro JS http://www.drewgreenwell.com/projects/metrojs
  * <p>
@@ -73,6 +75,7 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 	 *
 	 * @return
 	 */
+	@NotNull
 	protected final JQMetroFeature getFeature()
 	{
 		if (feature == null)
