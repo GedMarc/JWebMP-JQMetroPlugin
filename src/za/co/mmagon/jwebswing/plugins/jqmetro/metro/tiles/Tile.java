@@ -33,7 +33,8 @@ import za.co.mmagon.jwebswing.plugins.jqmetro.metro.interfaces.JQMetroTileChildr
  * A Tile
  * <p>
  *
- * @param <A> A valid set of attributes for a metro JS tile
+ * @param <A>
+ * 		A valid set of attributes for a metro JS tile
  * @param <J>
  *
  * @author MMagon
@@ -46,6 +47,7 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 {
 
 	private static final long serialVersionUID = 1L;
+	private static final String TitleTitleClassName = "tile-title";
 
 	/**
 	 * The tile proportion - tall or half
@@ -108,41 +110,6 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	}
 
 	/**
-	 * Returns the tile title
-	 *
-	 * @return
-	 */
-	/*
-	 * @Override
-     * public Div getTileTitle()
-     * {
-     * return tileTitle;
-     * }
-     */
-	/**
-	 * Sets the tile title
-	 *
-	 * @param tileTitle
-	 */
-    /*
-     * @Override
-     * public void setTileTitle(Div tileTitle)
-     * {
-     * if(this.tileTitle != null)
-     * {
-     * remove(this.tileTitle);
-     * }
-     * this.tileTitle = tileTitle;
-     *
-     * if(tileTitle != null)
-     * {
-     * tileTitle.addClass("tile-title");
-     * //add(this.tileTitle);
-     * }
-     * }
-     */
-
-	/**
 	 * Removes any applied colour themes
 	 */
 	private void removeExistingThemes()
@@ -193,8 +160,10 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	/**
 	 * Adds a new tile face
 	 *
-	 * @param <T>     Any Div
-	 * @param newFace The new face to add
+	 * @param <T>
+	 * 		Any Div
+	 * @param newFace
+	 * 		The new face to add
 	 * @param title
 	 *
 	 * @return The input div
@@ -204,7 +173,7 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	{
 		getChildren().add(newFace);
 		Span titleDiv = new Span();
-		titleDiv.addClass("tile-title");
+		titleDiv.addClass(TitleTitleClassName);
 		titleDiv.add(title);
 		newFace.add(titleDiv);
 		return (J) this;
@@ -213,8 +182,10 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	/**
 	 * Adds a new tile face
 	 *
-	 * @param <T>     Any Div
-	 * @param newFace The new face to add
+	 * @param <T>
+	 * 		Any Div
+	 * @param newFace
+	 * 		The new face to add
 	 * @param title
 	 *
 	 * @return The input div
@@ -223,7 +194,7 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	public <T extends Div> J addFace(T newFace, ComponentHierarchyBase title)
 	{
 		getChildren().add(newFace);
-		title.addClass("tile-title");
+		title.addClass(TitleTitleClassName);
 		newFace.add(title);
 		return (J) this;
 	}
@@ -231,26 +202,10 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	/**
 	 * Adds a new tile face
 	 *
-	 * @param <T>      Any Div
-	 * @param position The position in the array
-	 * @param newFace  The new face to add
-	 *
-	 * @return The input div
-	 */
-	@Override
-	public <T extends Div> J addFace(int position, T newFace, ComponentHierarchyBase title)
-	{
-		getChildren().add(position, newFace);
-		title.addClass("tile-title");
-		newFace.add(title);
-		return (J) this;
-	}
-
-	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>      Any Div
-	 * @param newFace  The new face to add
+	 * @param <T>
+	 * 		Any Div
+	 * @param newFace
+	 * 		The new face to add
 	 * @param title
 	 * @param position
 	 *
@@ -261,21 +216,73 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	{
 		getChildren().add(position, newFace);
 		Span titleDiv = new Span();
-		titleDiv.addClass("tile-title");
+		titleDiv.addClass(TitleTitleClassName);
 		titleDiv.add(title);
 		newFace.add(titleDiv);
 		return (J) this;
 	}
 
 	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>
+	 * 		Any Div
+	 * @param position
+	 * 		The position in the array
+	 * @param newFace
+	 * 		The new face to add
+	 *
+	 * @return The input div
+	 */
+	@Override
+	public <T extends Div> J addFace(int position, T newFace, ComponentHierarchyBase title)
+	{
+		getChildren().add(position, newFace);
+		title.addClass(TitleTitleClassName);
+		newFace.add(title);
+		return (J) this;
+	}
+
+	/**
 	 * Removes the face from the collection
 	 *
-	 * @param <T>     The face to remove
-	 * @param oldFace The old face
+	 * @param <T>
+	 * 		The face to remove
+	 * @param oldFace
+	 * 		The old face
 	 */
 	@Override
 	public <T extends Div> void removeFace(T oldFace)
 	{
 		getChildren().remove(oldFace);
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof Tile))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		Tile<?, ?> tile = (Tile<?, ?>) o;
+
+		return getTileProportion() == tile.getTileProportion();
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getTileProportion().hashCode();
+		return result;
 	}
 }

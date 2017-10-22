@@ -158,14 +158,14 @@ public class JQMetroTiles extends Div<JQMetroChildren, JQMetroAttributes, JQMetr
 
 		JQMetroTiles that = (JQMetroTiles) o;
 
-		return getFeature() != null ? getFeature().equals(that.getFeature()) : that.getFeature() == null;
+		return getFeature().equals(that.getFeature());
 	}
 
 	@Override
 	public int hashCode()
 	{
 		int result = super.hashCode();
-		result = 31 * result + (getFeature() != null ? getFeature().hashCode() : 0);
+		result = 31 * result + getFeature().hashCode();
 		return result;
 	}
 }

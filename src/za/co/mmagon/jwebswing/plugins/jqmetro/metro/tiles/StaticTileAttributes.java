@@ -94,10 +94,10 @@ public enum StaticTileAttributes implements JQMetroTileAttributes, AttributeDefi
 	 * Supported modes all
 	 * Default Value true
 	 */
-	useHardwareAccel("ha");;
+	useHardwareAccel("ha");
 	private String tagKey;
 
-	private StaticTileAttributes(String tagKey)
+	StaticTileAttributes(String tagKey)
 	{
 		this.tagKey = tagKey;
 	}

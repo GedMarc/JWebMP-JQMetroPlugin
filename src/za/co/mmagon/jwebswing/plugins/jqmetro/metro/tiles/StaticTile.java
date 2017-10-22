@@ -33,6 +33,6 @@ public class StaticTile extends Tile<StaticTileAttributes, StaticTile>
 
 	public StaticTile()
 	{
-
+		//Nothing needed
 	}
 }

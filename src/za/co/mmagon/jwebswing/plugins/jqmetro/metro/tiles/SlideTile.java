@@ -33,6 +33,6 @@ public class SlideTile extends Tile<SlideTileAttributes, SlideTile>
 
 	public SlideTile()
 	{
-
+		//Nothing Needed
 	}
 }
