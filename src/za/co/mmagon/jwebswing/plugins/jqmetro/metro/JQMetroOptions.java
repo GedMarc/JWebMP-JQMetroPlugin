@@ -30,7 +30,6 @@ import java.util.List;
  * All the options for the tooltip library
  * <p>
  * <p>
- * TODO update to CRP and JavaDoc
  *
  * @author GedMarc
  * @version 1.0

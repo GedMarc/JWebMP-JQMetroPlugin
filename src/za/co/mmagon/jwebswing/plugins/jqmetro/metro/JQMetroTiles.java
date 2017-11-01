@@ -27,7 +27,6 @@ import javax.validation.constraints.NotNull;
  * The implementation of JQuery Metro JS http://www.drewgreenwell.com/projects/metrojs
  * <p>
  * <p>
- * TODO update to CRP
  *
  * @author Marc Magon
  * @version 1.0
