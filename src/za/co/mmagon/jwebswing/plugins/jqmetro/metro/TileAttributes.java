@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.jqmetro.metro;
 
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * Available attributes for the JWMetro Tile
@@ -34,7 +35,7 @@ public enum TileAttributes implements AttributeDefinitions
 	@Override
 	public String toString()
 	{
-		return super.toString().replace('_', '-');
+		return super.toString().replace(StaticStrings.CHAR_UNDERSCORE, '-');
 	}
 	
 	@Override
