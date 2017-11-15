@@ -95,17 +95,25 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	}
 
 	/**
-	 * Returns the tile proportion
+	 * Adds a new tile face
 	 *
-	 * @param tileProportion
+	 * @param <T>
+	 * 		Any Div
+	 * @param newFace
+	 * 		The new face to add
+	 * @param title
+	 *
+	 * @return The input div
 	 */
 	@Override
-	public J setTileProportion(TileProportions tileProportion)
+	@SuppressWarnings("unchecked")
+	public <T extends Div> J addFace(T newFace, String title)
 	{
-		removeClass("half" + this.tileProportion + "");
-		removeClass("");
-		this.tileProportion = tileProportion;
-		addClass(tileProportion == null ? "" : "half" + tileProportion + "");
+		getChildren().add(newFace);
+		Span titleDiv = new Span();
+		titleDiv.addClass(TitleTitleClassName);
+		titleDiv.add(title);
+		newFace.add(titleDiv);
 		return (J) this;
 	}
 
@@ -132,11 +140,33 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	}
 
 	/**
+	 * Adds a new tile face
+	 *
+	 * @param <T>
+	 * 		Any Div
+	 * @param newFace
+	 * 		The new face to add
+	 * @param title
+	 *
+	 * @return The input div
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public <T extends Div> J addFace(T newFace, ComponentHierarchyBase title)
+	{
+		getChildren().add(newFace);
+		title.addClass(TitleTitleClassName);
+		newFace.add(title);
+		return (J) this;
+	}
+
+	/**
 	 * Sets the current tile accent theme
 	 *
 	 * @param theme
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public J setTheme(TileAccentThemes theme)
 	{
 		removeExistingThemes();
@@ -150,6 +180,7 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	 * @param theme
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public J setTileCount(TileCount theme)
 	{
 		removeExistingTileCounts();
@@ -158,44 +189,18 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	}
 
 	/**
-	 * Adds a new tile face
+	 * Returns the tile proportion
 	 *
-	 * @param <T>
-	 * 		Any Div
-	 * @param newFace
-	 * 		The new face to add
-	 * @param title
-	 *
-	 * @return The input div
+	 * @param tileProportion
 	 */
 	@Override
-	public <T extends Div> J addFace(T newFace, String title)
+	@SuppressWarnings("unchecked")
+	public J setTileProportion(TileProportions tileProportion)
 	{
-		getChildren().add(newFace);
-		Span titleDiv = new Span();
-		titleDiv.addClass(TitleTitleClassName);
-		titleDiv.add(title);
-		newFace.add(titleDiv);
-		return (J) this;
-	}
-
-	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>
-	 * 		Any Div
-	 * @param newFace
-	 * 		The new face to add
-	 * @param title
-	 *
-	 * @return The input div
-	 */
-	@Override
-	public <T extends Div> J addFace(T newFace, ComponentHierarchyBase title)
-	{
-		getChildren().add(newFace);
-		title.addClass(TitleTitleClassName);
-		newFace.add(title);
+		removeClass("half" + this.tileProportion + "");
+		removeClass("");
+		this.tileProportion = tileProportion;
+		addClass(tileProportion == null ? "" : "half" + tileProportion + "");
 		return (J) this;
 	}
 
