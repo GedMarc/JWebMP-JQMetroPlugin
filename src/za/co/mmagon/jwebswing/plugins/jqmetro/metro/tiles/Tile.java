@@ -118,28 +118,6 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	}
 
 	/**
-	 * Removes any applied colour themes
-	 */
-	private void removeExistingThemes()
-	{
-		for (TileAccentThemes theme : TileAccentThemes.values())
-		{
-			removeClass(theme.toString());
-		}
-	}
-
-	/**
-	 * Remove existing tiles
-	 */
-	private void removeExistingTileCounts()
-	{
-		for (TileCount tileCount : TileCount.values())
-		{
-			removeClass(tileCount.toString());
-		}
-	}
-
-	/**
 	 * Adds a new tile face
 	 *
 	 * @param <T>
@@ -175,6 +153,17 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	}
 
 	/**
+	 * Removes any applied colour themes
+	 */
+	private void removeExistingThemes()
+	{
+		for (TileAccentThemes theme : TileAccentThemes.values())
+		{
+			removeClass(theme.toString());
+		}
+	}
+
+	/**
 	 * Sets the current tile count
 	 *
 	 * @param theme
@@ -186,6 +175,17 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 		removeExistingTileCounts();
 		addClass(theme.toString());
 		return (J) this;
+	}
+
+	/**
+	 * Remove existing tiles
+	 */
+	private void removeExistingTileCounts()
+	{
+		for (TileCount tileCount : TileCount.values())
+		{
+			removeClass(tileCount.toString());
+		}
 	}
 
 	/**
