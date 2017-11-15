@@ -51,30 +51,6 @@ public interface IMetroTile<J>
 	<T extends Div> J addFace(T newFace, ComponentHierarchyBase title);
 
 	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>      Any Div
-	 * @param position The position in the array
-	 * @param newFace  The new face to add
-	 * @param title    The title of the tile
-	 *
-	 * @return The input div
-	 */
-	<T extends Div> J addFace(int position, T newFace, String title);
-
-	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>      Any Div
-	 * @param position The position in the array
-	 * @param newFace  The new face to add
-	 * @param title    The title of the tile
-	 *
-	 * @return The input div
-	 */
-	<T extends Div> J addFace(int position, T newFace, ComponentHierarchyBase title);
-
-	/**
 	 * Sets the tile proportion
 	 *
 	 * @return

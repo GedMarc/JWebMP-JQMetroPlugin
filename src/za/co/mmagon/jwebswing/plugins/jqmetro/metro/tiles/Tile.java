@@ -200,50 +200,6 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	}
 
 	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>
-	 * 		Any Div
-	 * @param newFace
-	 * 		The new face to add
-	 * @param title
-	 * @param position
-	 *
-	 * @return The input div
-	 */
-	@Override
-	public <T extends Div> J addFace(int position, T newFace, String title)
-	{
-		getChildren().add(position, newFace);
-		Span titleDiv = new Span();
-		titleDiv.addClass(TitleTitleClassName);
-		titleDiv.add(title);
-		newFace.add(titleDiv);
-		return (J) this;
-	}
-
-	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>
-	 * 		Any Div
-	 * @param position
-	 * 		The position in the array
-	 * @param newFace
-	 * 		The new face to add
-	 *
-	 * @return The input div
-	 */
-	@Override
-	public <T extends Div> J addFace(int position, T newFace, ComponentHierarchyBase title)
-	{
-		getChildren().add(position, newFace);
-		title.addClass(TitleTitleClassName);
-		newFace.add(title);
-		return (J) this;
-	}
-
-	/**
 	 * Removes the face from the collection
 	 *
 	 * @param <T>
