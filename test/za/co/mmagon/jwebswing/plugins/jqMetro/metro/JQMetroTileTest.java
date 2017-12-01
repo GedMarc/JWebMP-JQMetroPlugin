@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqMetro.metro;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
@@ -33,11 +32,6 @@ public class JQMetroTileTest extends BaseTestClass
 {
 
 	public JQMetroTileTest()
-	{
-	}
-	
-	@BeforeAll
-	public void setUp()
 	{
 	}
 
