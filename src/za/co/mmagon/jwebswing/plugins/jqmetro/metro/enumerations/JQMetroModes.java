@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.jqmetro.metro.enumerations;
 
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
 
 /**
  * This Class
@@ -54,7 +56,7 @@ public enum JQMetroModes
 	@Override
 	public String toString()
 	{
-		return super.toString().replace(StaticStrings.CHAR_UNDERSCORE, '-');
+		return super.toString().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
 	}
 
 }

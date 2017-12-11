@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.jqmetro.metro;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+
 /**
  * Available attributes for the JWMetro Tile
  *
@@ -31,17 +33,17 @@ public enum TileAttributes implements AttributeDefinitions
 	data_direction,
 	data_mode,
 	data_link;
-	
+
 	@Override
 	public String toString()
 	{
-		return super.toString().replace(StaticStrings.CHAR_UNDERSCORE, '-');
+		return super.toString().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
 	}
-	
+
 	@Override
 	public boolean isKeyword()
 	{
 		return false;
 	}
-	
+
 }
