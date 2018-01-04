@@ -243,7 +243,6 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	public int hashCode()
 	{
 		int result = super.hashCode();
-		result = 31 * result + getTileProportion().hashCode();
 		return result;
 	}
 }
