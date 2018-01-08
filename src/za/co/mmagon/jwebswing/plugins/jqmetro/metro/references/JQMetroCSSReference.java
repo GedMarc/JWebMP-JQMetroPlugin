@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,12 +26,12 @@ import za.co.mmagon.jwebswing.base.references.CSSReference;
  */
 public class JQMetroCSSReference extends CSSReference
 {
-	
+
 	/**
 	 *
 	 */
 	public JQMetroCSSReference()
 	{
-		super("JWMetroCSSReference", 1.0, "bower_components/metrojs/release/MetroJs.Full/MetroJs.css");
+		super("JWMetroCSSReference", 1.0, "bower_components/metrojs/release/MetroJs.Full/MetroJs.min.css");
 	}
 }
