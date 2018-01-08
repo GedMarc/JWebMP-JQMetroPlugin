@@ -59,7 +59,7 @@ public class JQMetroTileTest extends BaseTestClass
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
 		System.out.println(instance.getJavascriptReferencesAll());
-		String expResult = "[bower_components/metrojs/release/MetroJs.Full/MetroJs.js]";
+		String expResult = "[bower_components/metrojs/release/MetroJs.Full/MetroJs.min.js]";
 		String result = "[" + new JQMetroJavascriptReference().getLocalReference() + "]";
 		assertEquals(expResult, result);
 	}
