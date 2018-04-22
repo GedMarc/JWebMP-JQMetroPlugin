@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.jqMetro.metro;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.Page;
 import com.jwebmp.plugins.jqmetro.metro.JQMetroTiles;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileAccentThemes;
@@ -29,7 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author GedMarc
  */
 public class JQMetroTileTest
-		extends BaseTestClass
+
 {
 
 	public JQMetroTileTest()
@@ -42,7 +41,7 @@ public class JQMetroTileTest
 	@Test
 	public void testGroup()
 	{
-		Page p = getPage();
+		Page p = new Page();
 		JQMetroTiles instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
@@ -55,7 +54,7 @@ public class JQMetroTileTest
 	@Test
 	public void testJavascriptLinks()
 	{
-		Page p = getPage();
+		Page p = new Page();
 		JQMetroTiles instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
