@@ -14,17 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqmetro.metro;
+package com.jwebmp.plugins.jqmetro.metro.interfaces;
 
-import com.jwebmp.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.base.html.interfaces.GlobalFeatures;
 
 /**
  * @author Marc Magon
  * @version 1.0
  * @since 07 Aug 2015
  */
-public interface JQMetroEvents
-		extends GlobalEvents
+public interface JQMetroFeatures
+		extends GlobalFeatures
 {
 
 }

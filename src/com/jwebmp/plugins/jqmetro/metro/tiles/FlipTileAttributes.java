@@ -89,8 +89,7 @@ public enum FlipTileAttributes
 	 * Default Value -1
 	 * Options -1 = use delay, any number greater than or equal to zero is used
 	 */
-
-
+	
 	initDelay("initdelay"),
 	/**
 	 * link

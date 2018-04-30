@@ -18,6 +18,8 @@ package com.jwebmp.plugins.jqmetro.metro.tiles;
 
 import com.jwebmp.plugins.ComponentInformation;
 
+import static com.jwebmp.plugins.jqmetro.metro.JQMetroPageConfigurator.METRO_TILES_STATIC_EXCLUDE;
+
 /**
  * @author GedMarc
  * @version 1.0
@@ -26,13 +28,15 @@ import com.jwebmp.plugins.ComponentInformation;
 @ComponentInformation(name = "Static Tile",
 		description = "A static tile",
 		url = "http://www.drewgreenwell.com/projects/metrojs")
-public class StaticTile extends Tile<StaticTileAttributes, StaticTile>
+public class StaticTile
+		extends Tile<StaticTileAttributes, StaticTile>
 {
 
 	private static final long serialVersionUID = 1L;
 
 	public StaticTile()
 	{
-		//Nothing needed
+		addClass("accent");
+		addClass(METRO_TILES_STATIC_EXCLUDE);
 	}
 }

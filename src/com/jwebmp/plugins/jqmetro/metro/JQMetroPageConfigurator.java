@@ -42,6 +42,7 @@ public class JQMetroPageConfigurator
 		extends PageConfigurator
 {
 
+	public static final String METRO_TILES_STATIC_EXCLUDE = "static_tile_exclusions";
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -53,7 +54,7 @@ public class JQMetroPageConfigurator
 	}
 
 	@Override
-	public Page configure(Page page)
+	public Page configure(Page<?> page)
 	{
 		if (!page.isConfigured())
 		{

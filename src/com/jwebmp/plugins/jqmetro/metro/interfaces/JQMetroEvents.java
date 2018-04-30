@@ -14,38 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqmetro.metro;
+package com.jwebmp.plugins.jqmetro.metro.interfaces;
 
-import com.jwebmp.base.html.interfaces.AttributeDefinitions;
-import com.jwebmp.utilities.StaticStrings;
-
-import static com.jwebmp.utilities.StaticStrings.CHAR_DASH;
+import com.jwebmp.base.html.interfaces.events.GlobalEvents;
 
 /**
- * Available attributes for the JWMetro Tile
- *
- * @author MMagon
+ * @author Marc Magon
  * @version 1.0
- * @since 23 Sep 2013
+ * @since 07 Aug 2015
  */
-public enum TileAttributes
-		implements AttributeDefinitions
+public interface JQMetroEvents
+		extends GlobalEvents
 {
-	data_direction,
-	data_mode,
-	data_link;
-
-	@Override
-	public String toString()
-	{
-		return super.toString()
-		            .replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
-	}
-
-	@Override
-	public boolean isKeyword()
-	{
-		return false;
-	}
 
 }

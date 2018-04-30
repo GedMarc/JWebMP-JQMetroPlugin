@@ -24,7 +24,7 @@ import com.jwebmp.plugins.jqmetro.metro.interfaces.JQMetroTileAttributes;
  * @version 1.0
  * @since Aug 30, 2016
  */
-public enum FadeTileAttributes
+public enum CarouselTileAttributes
 		implements JQMetroTileAttributes, AttributeDefinitions
 {
 	/**
@@ -258,7 +258,7 @@ public enum FadeTileAttributes
 	useHardwareAccel("ha");
 	private String keyTag;
 
-	FadeTileAttributes(String keyTag)
+	CarouselTileAttributes(String keyTag)
 	{
 		this.keyTag = keyTag;
 	}

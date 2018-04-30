@@ -20,6 +20,10 @@ import com.jwebmp.base.html.Div;
 import com.jwebmp.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileAccentThemes;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileCount;
+import com.jwebmp.plugins.jqmetro.metro.interfaces.JQMetroChildren;
+import com.jwebmp.plugins.jqmetro.metro.interfaces.JQMetroEvents;
+import com.jwebmp.plugins.jqmetro.metro.interfaces.JQMetroFeatures;
+import com.jwebmp.plugins.jqmetro.metro.tiles.Tile;
 
 import javax.validation.constraints.NotNull;
 
@@ -35,8 +39,8 @@ import javax.validation.constraints.NotNull;
 @ComponentInformation(name = "Metro Tiles",
 		description = "All tile modes support swapping content with images or html at random or sequentially from an array",
 		url = "http://www.drewgreenwell.com/projects/metrojs")
-public class JQMetroTiles
-		extends Div<JQMetroChildren, JQMetroAttributes, JQMetroFeatures, JQMetroEvents, JQMetroTiles>
+public class JQMetroTiles<J extends JQMetroTiles<J>>
+		extends Div<JQMetroChildren, JQMetroAttributes, JQMetroFeatures, JQMetroEvents, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -130,6 +134,21 @@ public class JQMetroTiles
 	}
 
 	/**
+	 * Adds a tile to this metro tile group
+	 *
+	 * @param tile
+	 *
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J addTile(Tile<?, ?> tile)
+	{
+		add(tile);
+		return (J) this;
+	}
+
+	/**
 	 * Returns the options
 	 *
 	 * @return
@@ -141,29 +160,14 @@ public class JQMetroTiles
 	}
 
 	@Override
-	public int hashCode()
+	public boolean equals(Object o)
 	{
-		return super.hashCode();
+		return super.equals(o);
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public int hashCode()
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQMetroTiles))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQMetroTiles that = (JQMetroTiles) o;
-
-		return getFeature().equals(that.getFeature());
+		return super.hashCode();
 	}
 }

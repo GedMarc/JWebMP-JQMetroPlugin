@@ -16,7 +16,16 @@
  */
 package com.jwebmp.plugins.jqmetro.metro.tiles;
 
+import com.jwebmp.base.html.List;
+import com.jwebmp.base.html.ListItem;
+import com.jwebmp.base.html.Span;
+import com.jwebmp.generics.HorizontalOrVertical;
 import com.jwebmp.plugins.ComponentInformation;
+
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author GedMarc
@@ -26,16 +35,86 @@ import com.jwebmp.plugins.ComponentInformation;
 @ComponentInformation(name = "Flip List Tile",
 		description = "flip-list tile mode to flip any number of tiles in sequence or at custom intervals to create mosaics and other unique content presentations (e.g. People tile or the color strip, skills tile, and the hover list on the home page)",
 		url = "http://www.drewgreenwell.com/projects/metrojs")
-public class FlipListTile extends Tile<FlipListTileAttributes, FlipListTile>
+public class FlipListTile
+		extends Tile<FlipListTileAttributes, FlipListTile>
 {
 
 	private static final long serialVersionUID = 1L;
+	private final Set<TileFace<?>> tileFaces;
+	private List tileList;
+
+	private Map<TileFace<?>, HorizontalOrVertical> directions;
+
+	/**
+	 * Constructs a new FlipList tileset with the given title
+	 *
+	 * @param tileTitle
+	 */
+	public FlipListTile(String tileTitle)
+	{
+		this();
+		Span sp = new Span(tileTitle);
+		sp.addClass("tile-title");
+		getChildren().add(sp);
+	}
 
 	/**
 	 * Constructs a new flip list tile
 	 */
 	public FlipListTile()
 	{
-		//Nothing needed
+		removeClass("live-tile");
+		addClass("list-tile");
+
+		tileList = new List(false);
+		tileList.addClass("flip-list");
+		tileList.addAttribute("data-mode", "flip-list");
+		tileFaces = new LinkedHashSet<>();
+
+		directions = new HashMap<>();
+	}
+
+	@Override
+	public FlipListTile addFace(TileFace<?> newFace, String title)
+	{
+		tileFaces.add(newFace.addCaption(title));
+		return this;
+	}
+
+	@Override
+	public FlipListTile addFace(TileFace<?> newFace)
+	{
+		tileFaces.add(newFace);
+		return this;
+	}
+
+	public FlipListTile addFace(TileFace<?> newFace, HorizontalOrVertical direction)
+	{
+		tileFaces.add(newFace);
+		directions.put(newFace, direction);
+		return this;
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			getChildren().add(tileList);
+			tileFaces.forEach(a ->
+			                  {
+				                  ListItem li = new ListItem();
+				                  li.add(a);
+				                  tileList.add(li);
+
+				                  if (directions.containsKey(a))
+				                  {
+					                  li.addAttribute("data-direction", directions.get(a)
+					                                                              .toString());
+				                  }
+			                  });
+		}
+		super.preConfigure();
 	}
 }

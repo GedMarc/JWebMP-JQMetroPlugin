@@ -28,7 +28,8 @@ import com.jwebmp.plugins.ComponentInformation;
 @ComponentInformation(name = "Fading Tile",
 		description = "slide tile mode to stop at an arbitrary number of points to reveal or slide with the tile face behind it (e.g. Me tile, or the animated clouds on the projects page)",
 		url = "http://www.drewgreenwell.com/projects/metrojs")
-public class FadeTile extends Tile<FadeTileAttributes, FadeTile>
+public class CarouselTiles
+		extends Tile<CarouselTileAttributes, CarouselTiles>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -36,8 +37,9 @@ public class FadeTile extends Tile<FadeTileAttributes, FadeTile>
 	/**
 	 * Constructs a new fade tile
 	 */
-	public FadeTile()
+	public CarouselTiles()
 	{
-		//Nothing needed
+		addAttribute(CarouselTileAttributes.mode, "carousel");
+		addAttribute("data-direction", "horizontal");
 	}
 }

@@ -24,12 +24,18 @@ import com.jwebmp.base.html.interfaces.AttributeDefinitions;
 public enum JQMetroAttributes
 		implements AttributeDefinitions
 {
-
+	Data_Mode,
 	Visibility;
 
 	@Override
 	public boolean isKeyword()
 	{
 		return false;
+	}
+
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase();
 	}
 }

@@ -26,7 +26,8 @@ import com.jwebmp.plugins.ComponentInformation;
 @ComponentInformation(name = "Flip Tile",
 		description = "flip tile mode to flip between two tile faces",
 		url = "http://www.drewgreenwell.com/projects/metrojs")
-public class FlipTile extends Tile<FlipTileAttributes, FlipTile>
+public class FlipTile
+		extends Tile<FlipTileAttributes, FlipTile>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -36,7 +37,7 @@ public class FlipTile extends Tile<FlipTileAttributes, FlipTile>
 	 */
 	public FlipTile()
 	{
-		//Nothing needed
+		addAttribute("data-mode", "flip");
 	}
 
 }

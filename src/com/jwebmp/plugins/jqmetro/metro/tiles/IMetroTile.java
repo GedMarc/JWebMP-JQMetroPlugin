@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.jqmetro.metro.tiles;
 
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.html.Div;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileAccentThemes;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileCount;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileProportions;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author GedMarc
@@ -28,33 +28,9 @@ import com.jwebmp.plugins.jqmetro.metro.enumerations.TileProportions;
  */
 public interface IMetroTile<J>
 {
-	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>
-	 * 		Any Div
-	 * @param newFace
-	 * 		The new face to add
-	 * @param title
-	 * 		The title of the tile
-	 *
-	 * @return The input div
-	 */
-	<T extends Div> J addFace(T newFace, String title);
 
-	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>
-	 * 		Any Div
-	 * @param newFace
-	 * 		The new face to add
-	 * @param title
-	 * 		The title of the tile
-	 *
-	 * @return The input div
-	 */
-	<T extends Div> J addFace(T newFace, ComponentHierarchyBase title);
+	@SuppressWarnings("unchecked")
+	J addFace(TileFace<?> newFace, String title);
 
 	/**
 	 * Sets the tile proportion
@@ -66,12 +42,9 @@ public interface IMetroTile<J>
 	/**
 	 * Removes the face from the collection
 	 *
-	 * @param <T>
-	 * 		The face to remove
 	 * @param oldFace
-	 * 		The old face
 	 */
-	<T extends Div> void removeFace(T oldFace);
+	void removeFace(TileFace<?> oldFace);
 
 	/**
 	 * Sets the current tile accent theme
@@ -93,4 +66,8 @@ public interface IMetroTile<J>
 	 * @param tileProportion
 	 */
 	J setTileProportion(TileProportions tileProportion);
+
+	@SuppressWarnings("unchecked")
+	@NotNull
+	J addFace(TileFace<?> newFace);
 }

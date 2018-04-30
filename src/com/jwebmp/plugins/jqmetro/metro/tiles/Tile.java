@@ -16,18 +16,19 @@
  */
 package com.jwebmp.plugins.jqmetro.metro.tiles;
 
-import com.jwebmp.base.ComponentHierarchyBase;
 import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.Span;
 import com.jwebmp.base.html.interfaces.AttributeDefinitions;
 import com.jwebmp.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.base.html.interfaces.events.GlobalEvents;
-import com.jwebmp.plugins.jqmetro.metro.JQMetroChildren;
+import com.jwebmp.plugins.jqmetro.metro.enumerations.JQMetroModes;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileAccentThemes;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileCount;
 import com.jwebmp.plugins.jqmetro.metro.enumerations.TileProportions;
+import com.jwebmp.plugins.jqmetro.metro.interfaces.JQMetroChildren;
 import com.jwebmp.plugins.jqmetro.metro.interfaces.JQMetroTileAttributes;
 import com.jwebmp.plugins.jqmetro.metro.interfaces.JQMetroTileChildren;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * A Tile
@@ -83,47 +84,13 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 		return this;
 	}
 
-	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>
-	 * 		Any Div
-	 * @param newFace
-	 * 		The new face to add
-	 * @param title
-	 *
-	 * @return The input div
-	 */
-	@Override
 	@SuppressWarnings("unchecked")
-	public <T extends Div> J addFace(T newFace, String title)
+	@NotNull
+	@Override
+	public J addFace(TileFace<?> newFace, String title)
 	{
 		getChildren().add(newFace);
-		Span titleDiv = new Span();
-		titleDiv.addClass(TitleTitleClassName);
-		titleDiv.add(title);
-		newFace.add(titleDiv);
-		return (J) this;
-	}
-
-	/**
-	 * Adds a new tile face
-	 *
-	 * @param <T>
-	 * 		Any Div
-	 * @param newFace
-	 * 		The new face to add
-	 * @param title
-	 *
-	 * @return The input div
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public <T extends Div> J addFace(T newFace, ComponentHierarchyBase title)
-	{
-		getChildren().add(newFace);
-		title.addClass(TitleTitleClassName);
-		newFace.add(title);
+		newFace.addCaption(title);
 		return (J) this;
 	}
 
@@ -154,16 +121,17 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 		return (J) this;
 	}
 
-	/**
-	 * Removes the face from the collection
-	 *
-	 * @param <T>
-	 * 		The face to remove
-	 * @param oldFace
-	 * 		The old face
-	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
 	@Override
-	public <T extends Div> void removeFace(T oldFace)
+	public J addFace(TileFace<?> newFace)
+	{
+		getChildren().add(newFace);
+		return (J) this;
+	}
+
+	@Override
+	public void removeFace(TileFace<?> oldFace)
 	{
 		getChildren().remove(oldFace);
 	}
@@ -218,31 +186,30 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 		}
 	}
 
+	/**
+	 * Sets the mode of this tile
+	 *
+	 * @param mode
+	 *
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setMode(JQMetroModes mode)
+	{
+		addAttribute("data-mode", mode.toString());
+		return (J) this;
+	}
+
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof Tile))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		Tile<?, ?> tile = (Tile<?, ?>) o;
-
-		return getTileProportion() == tile.getTileProportion();
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

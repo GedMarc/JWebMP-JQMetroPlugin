@@ -16,9 +16,11 @@
  */
 package com.jwebmp.plugins.jqmetro.metro;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jwebmp.Feature;
 import com.jwebmp.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.plugins.jqmetro.metro.interfaces.JQMetroFeatures;
+
+import static com.jwebmp.plugins.jqmetro.metro.JQMetroPageConfigurator.METRO_TILES_STATIC_EXCLUDE;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -34,9 +36,8 @@ public class JQMetroFeature
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonIgnore
-	private final JQMetroTiles forComponent;
 	private JQMetroOptions options;
+	private boolean rebind;
 
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component. Adds the tooltip text as the Title attribute to the component
@@ -47,7 +48,7 @@ public class JQMetroFeature
 	public JQMetroFeature(JQMetroTiles forComponent)
 	{
 		super("JQMetroFeature");
-		this.forComponent = forComponent;
+		setComponent(forComponent);
 	}
 
 	@Override
@@ -59,26 +60,7 @@ public class JQMetroFeature
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQMetroFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQMetroFeature that = (JQMetroFeature) o;
-
-		if (forComponent != null ? !forComponent.equals(that.forComponent) : that.forComponent != null)
-		{
-			return false;
-		}
-		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+		return super.equals(o);
 	}
 
 	/**
@@ -100,13 +82,19 @@ public class JQMetroFeature
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		String requiredString = "$('.live-tile').liveTile('rebind'";
-		String queryOptions = getOptions().toString();
-		if (!queryOptions.isEmpty())
-		{
-			requiredString += getOptions().toString();
-		}
+		String requiredString = "$('.live-tile').not('." + METRO_TILES_STATIC_EXCLUDE + "').liveTile(" + (rebind ? "'rebind'," : "");
+		requiredString += getOptions().toString();
 		requiredString += ");" + getNewLine();
 		addQuery(requiredString);
+	}
+
+	public boolean isRebind()
+	{
+		return rebind;
+	}
+
+	public void setRebind(boolean rebind)
+	{
+		this.rebind = rebind;
 	}
 }
