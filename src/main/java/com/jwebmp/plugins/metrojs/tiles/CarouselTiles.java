@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.metrojs.tiles;
 
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 /**
  * A JQMetro Fade Tile. Configure with attributes

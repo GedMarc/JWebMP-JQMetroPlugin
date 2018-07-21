@@ -1,9 +1,9 @@
 package com.jwebmp.plugins.metrojs.tiles;
 
-import com.jwebmp.base.html.DivSimple;
-import com.jwebmp.base.html.Image;
-import com.jwebmp.base.html.Paragraph;
-import com.jwebmp.base.html.Span;
+import com.jwebmp.core.base.html.DivSimple;
+import com.jwebmp.core.base.html.Image;
+import com.jwebmp.core.base.html.Paragraph;
+import com.jwebmp.core.base.html.Span;
 
 import javax.validation.constraints.NotNull;
 

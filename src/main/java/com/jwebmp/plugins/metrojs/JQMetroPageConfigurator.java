@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.metrojs;
 
-import com.jwebmp.Page;
-import com.jwebmp.PageConfigurator;
-import com.jwebmp.plugins.PluginInformation;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.PageConfigurator;
+import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.plugins.metrojs.references.JQMetroCSSReference;
 import com.jwebmp.plugins.metrojs.references.JQMetroJavascriptReference;
 

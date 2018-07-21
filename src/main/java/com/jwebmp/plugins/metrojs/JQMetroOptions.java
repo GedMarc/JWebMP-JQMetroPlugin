@@ -17,9 +17,9 @@
 package com.jwebmp.plugins.metrojs;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.jwebmp.base.servlets.enumarations.Orientation;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.htmlbuilder.javascript.events.enumerations.EventTypes;
+import com.jwebmp.core.base.servlets.enumarations.Orientation;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.events.enumerations.EventTypes;
 import com.jwebmp.plugins.easingeffects.JQEasingEffects;
 import com.jwebmp.plugins.metrojs.enumerations.JQMetroBounceDirections;
 import com.jwebmp.plugins.metrojs.enumerations.JQMetroModes;

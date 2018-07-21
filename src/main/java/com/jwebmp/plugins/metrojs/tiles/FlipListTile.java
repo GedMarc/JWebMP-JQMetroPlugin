@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.metrojs.tiles;
 
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.ListItem;
-import com.jwebmp.base.html.Span;
-import com.jwebmp.generics.HorizontalOrVertical;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.generics.HorizontalOrVertical;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;

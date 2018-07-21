@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqMetro.metro;
 
-import com.jwebmp.Page;
-import com.jwebmp.generics.HorizontalOrVertical;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.generics.HorizontalOrVertical;
 import com.jwebmp.plugins.metrojs.JQMetroTiles;
 import com.jwebmp.plugins.metrojs.enumerations.TileAccentThemes;
 import com.jwebmp.plugins.metrojs.references.JQMetroJavascriptReference;

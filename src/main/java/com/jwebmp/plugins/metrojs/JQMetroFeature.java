@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.metrojs;
 
-import com.jwebmp.Feature;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.metrojs.interfaces.JQMetroFeatures;
 
 import static com.jwebmp.plugins.metrojs.JQMetroPageConfigurator.*;

@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.metrojs.references;
 
-import com.jwebmp.base.references.JavascriptReference;
+import com.jwebmp.core.base.references.JavascriptReference;
 
 /**
  * @author GedMarc

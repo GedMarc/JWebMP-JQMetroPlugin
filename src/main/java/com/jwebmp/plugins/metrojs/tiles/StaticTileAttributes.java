@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.metrojs.tiles;
 
-import com.jwebmp.base.html.interfaces.AttributeDefinitions;
+import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
 import com.jwebmp.plugins.metrojs.interfaces.JQMetroTileAttributes;
 
 /**

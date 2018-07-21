@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.metrojs.tiles;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.interfaces.AttributeDefinitions;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.plugins.metrojs.enumerations.JQMetroModes;
 import com.jwebmp.plugins.metrojs.enumerations.TileAccentThemes;
 import com.jwebmp.plugins.metrojs.enumerations.TileCount;
