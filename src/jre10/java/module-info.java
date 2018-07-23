@@ -1,3 +1,6 @@
+import com.jwebmp.core.services.IPageConfigurator;
+import com.jwebmp.plugins.metrojs.JQMetroPageConfigurator;
+
 module com.jwebmp.plugins.metrojs {
 	exports com.jwebmp.plugins.metrojs;
 	exports com.jwebmp.plugins.metrojs.enumerations;
@@ -12,4 +15,7 @@ module com.jwebmp.plugins.metrojs {
 	requires java.validation;
 	requires java.logging;
 	requires com.jwebmp.plugins.easingeffects;
+
+	provides IPageConfigurator with JQMetroPageConfigurator;
+
 }

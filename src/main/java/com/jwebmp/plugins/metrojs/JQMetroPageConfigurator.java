@@ -17,8 +17,8 @@
 package com.jwebmp.plugins.metrojs;
 
 import com.jwebmp.core.Page;
-import com.jwebmp.core.PageConfigurator;
 import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.metrojs.references.JQMetroCSSReference;
 import com.jwebmp.plugins.metrojs.references.JQMetroJavascriptReference;
 
@@ -39,11 +39,10 @@ import com.jwebmp.plugins.metrojs.references.JQMetroJavascriptReference;
 		pluginOriginalHomepage = "http://www.drewgreenwell.com/projects/metrojs",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQMetroPlugin.jar/download")
 public class JQMetroPageConfigurator
-		extends PageConfigurator
+		implements IPageConfigurator
 {
 
 	public static final String METRO_TILES_STATIC_EXCLUDE = "static_tile_exclusions";
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A new instance of the page configurator
