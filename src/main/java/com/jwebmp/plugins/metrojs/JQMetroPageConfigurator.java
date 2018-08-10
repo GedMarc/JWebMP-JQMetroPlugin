@@ -22,6 +22,8 @@ import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.metrojs.references.JQMetroCSSReference;
 import com.jwebmp.plugins.metrojs.references.JQMetroJavascriptReference;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * @author GedMarc
  * @since 26 Feb 2017
@@ -52,6 +54,7 @@ public class JQMetroPageConfigurator
 		//Nothing needed
 	}
 
+	@NotNull
 	@Override
 	public Page configure(Page<?> page)
 	{
