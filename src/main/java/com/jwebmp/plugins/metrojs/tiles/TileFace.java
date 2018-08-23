@@ -4,11 +4,14 @@ import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.core.base.html.Image;
 import com.jwebmp.core.base.html.Paragraph;
 import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.plugins.metrojs.interfaces.JQMetroTileChildren;
 
 import javax.validation.constraints.NotNull;
 
 public class TileFace<J extends TileFace<J>>
 		extends DivSimple<J>
+		implements JQMetroTileChildren<IComponentHierarchyBase, J>
 {
 	/**
 	 * Creates a new tile face for display

@@ -17,8 +17,6 @@
 package com.jwebmp.plugins.metrojs;
 
 import com.jwebmp.core.Feature;
-import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.metrojs.interfaces.JQMetroFeatures;
 
 import static com.jwebmp.plugins.metrojs.JQMetroPageConfigurator.*;
 
@@ -30,8 +28,7 @@ import static com.jwebmp.plugins.metrojs.JQMetroPageConfigurator.*;
  * @since 2013/01/16
  */
 public class JQMetroFeature
-		extends Feature<JQMetroOptions, JQMetroFeature>
-		implements JQMetroFeatures, GlobalFeatures
+		extends Feature<JQMetroFeature, JQMetroOptions, JQMetroFeature>
 {
 
 	private static final long serialVersionUID = 1L;

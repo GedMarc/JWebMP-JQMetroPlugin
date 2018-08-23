@@ -16,9 +16,7 @@
  */
 package com.jwebmp.plugins.metrojs.tiles;
 
-import com.jwebmp.core.base.html.List;
 import com.jwebmp.core.base.html.ListItem;
-import com.jwebmp.core.base.html.Span;
 import com.jwebmp.core.generics.HorizontalOrVertical;
 import com.jwebmp.core.plugins.ComponentInformation;
 
@@ -41,7 +39,7 @@ public class FlipListTile
 
 	private static final long serialVersionUID = 1L;
 	private final Set<TileFace<?>> tileFaces;
-	private List tileList;
+	private FlipList tileList;
 
 	private Map<TileFace<?>, HorizontalOrVertical> directions;
 
@@ -53,9 +51,8 @@ public class FlipListTile
 	public FlipListTile(String tileTitle)
 	{
 		this();
-		Span sp = new Span(tileTitle);
-		sp.addClass("tile-title");
-		getChildren().add(sp);
+		TileTitle sp = new TileTitle<>().setText(tileTitle);
+		add(sp);
 	}
 
 	/**
@@ -66,9 +63,8 @@ public class FlipListTile
 		removeClass("live-tile");
 		addClass("list-tile");
 
-		tileList = new List(false);
-		tileList.addClass("flip-list");
-		tileList.addAttribute("data-mode", "flip-list");
+		tileList = new FlipList();
+
 		tileFaces = new LinkedHashSet<>();
 
 		directions = new HashMap<>();
@@ -101,7 +97,7 @@ public class FlipListTile
 	{
 		if (!isConfigured())
 		{
-			getChildren().add(tileList);
+			add(tileList);
 			tileFaces.forEach(a ->
 			                  {
 				                  ListItem li = new ListItem();

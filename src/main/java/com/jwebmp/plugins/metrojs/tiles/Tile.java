@@ -44,7 +44,7 @@ import javax.validation.constraints.NotNull;
  */
 public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDefinitions, J extends Tile<A, J>>
 		extends Div<JQMetroTileChildren, A, GlobalFeatures, GlobalEvents, J>
-		implements JQMetroChildren, IMetroTile<J>
+		implements JQMetroChildren<JQMetroTileChildren, J>, IMetroTile<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -202,14 +202,14 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }
