@@ -127,7 +127,7 @@ public class JQMetroTileTest
 		Page p = new Page();
 		JQMetroTiles instance = new JQMetroTiles();
 		instance.setID("id");
-		instance.setTheme(TileAccentThemes.Cobalt);
+		instance.setTheme(TileAccentThemes.Mauve);
 
 		instance.addTile(new FlipListTile("Tile Title").addFace(new TileFace("Face1").addImage("imageUrl1"))
 		                                               .addFace(new TileFace("Face2"))

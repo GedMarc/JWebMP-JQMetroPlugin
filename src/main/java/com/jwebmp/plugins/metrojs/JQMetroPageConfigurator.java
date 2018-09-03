@@ -43,8 +43,11 @@ import javax.validation.constraints.NotNull;
 public class JQMetroPageConfigurator
 		implements IPageConfigurator
 {
-
 	public static final String METRO_TILES_STATIC_EXCLUDE = "static_tile_exclusions";
+	/**
+	 * If this configurator is enabled
+	 */
+	private static boolean enabled = true;
 
 	/**
 	 * A new instance of the page configurator
@@ -52,6 +55,31 @@ public class JQMetroPageConfigurator
 	public JQMetroPageConfigurator()
 	{
 		//Nothing needed
+	}
+
+	/**
+	 * Method isEnabled returns the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @return the enabled (type boolean) of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static boolean isEnabled()
+	{
+		return JQMetroPageConfigurator.enabled;
+	}
+
+	/**
+	 * Method setEnabled sets the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @param mustEnable
+	 * 		the enabled of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static void setEnabled(boolean mustEnable)
+	{
+		JQMetroPageConfigurator.enabled = mustEnable;
 	}
 
 	@NotNull
@@ -68,5 +96,11 @@ public class JQMetroPageConfigurator
 			    .add(new JQMetroCSSReference());
 		}
 		return page;
+	}
+
+	@Override
+	public boolean enabled()
+	{
+		return JQMetroPageConfigurator.enabled;
 	}
 }
