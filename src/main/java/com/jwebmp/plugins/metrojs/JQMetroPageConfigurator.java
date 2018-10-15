@@ -35,13 +35,13 @@ import javax.validation.constraints.NotNull;
 		pluginDependancyUniqueIDs = "",
 		pluginCategories = "tiles, icons,themes,fliptiles",
 		pluginSubtitle = "Want to make a 'Me' tile or a 'People' tile like you see on Windows Phone for your website? Metro JS makes it easy!",
-		pluginGitUrl = "https://github.com/GedMarc/JWebSwing-JQMetroPlugin",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMP-JQMetroPlugin",
 		pluginSourceUrl = "http://www.drewgreenwell.com/projects/metrojs/theme-generator",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-JQMetroPlugin/wiki",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-JQMetroPlugin/wiki",
 		pluginOriginalHomepage = "http://www.drewgreenwell.com/projects/metrojs",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQMetroPlugin.jar/download")
 public class JQMetroPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<JQMetroPageConfigurator>
 {
 	public static final String METRO_TILES_STATIC_EXCLUDE = "static_tile_exclusions";
 	/**
