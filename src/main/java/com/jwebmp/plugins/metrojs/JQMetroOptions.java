@@ -44,7 +44,6 @@ public class JQMetroOptions<J extends JQMetroOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQMetroModes mode;
 	private Integer speed;

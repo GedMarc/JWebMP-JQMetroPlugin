@@ -32,7 +32,6 @@ public class StaticTile
 		extends Tile<StaticTileAttributes, StaticTile>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public StaticTile()
 	{

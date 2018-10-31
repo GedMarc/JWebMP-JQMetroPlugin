@@ -30,7 +30,6 @@ public class FlipTile
 		extends Tile<FlipTileAttributes, FlipTile>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Flips the tile

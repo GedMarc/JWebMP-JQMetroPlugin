@@ -31,7 +31,6 @@ public class JQMetroFeature
 		extends Feature<JQMetroFeature, JQMetroOptions, JQMetroFeature>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQMetroOptions options;
 	private boolean rebind;

@@ -43,7 +43,6 @@ public class JQMetroTiles<J extends JQMetroTiles<J>>
 		extends Div<JQMetroChildren, JQMetroAttributes, JQMetroFeatures, JQMetroEvents, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQMetroFeature feature;
 
@@ -160,14 +159,14 @@ public class JQMetroTiles<J extends JQMetroTiles<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

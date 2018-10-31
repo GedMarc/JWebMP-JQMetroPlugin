@@ -32,7 +32,6 @@ public class CarouselTiles
 		extends Tile<CarouselTileAttributes, CarouselTiles>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new fade tile

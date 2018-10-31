@@ -47,7 +47,7 @@ public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDef
 		implements JQMetroChildren<JQMetroTileChildren, J>, IMetroTile<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private static final String TitleTitleClassName = "tile-title";
 
 	/**

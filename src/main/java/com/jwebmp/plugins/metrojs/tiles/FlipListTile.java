@@ -37,7 +37,7 @@ public class FlipListTile
 		extends Tile<FlipListTileAttributes, FlipListTile>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private final Set<TileFace<?>> tileFaces;
 	private FlipList tileList;
 
