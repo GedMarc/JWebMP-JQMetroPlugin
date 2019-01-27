@@ -1,8 +1,3 @@
-import com.jwebmp.core.services.IPageConfigurator;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
-import com.jwebmp.plugins.metrojs.JQMetroPageConfigurator;
-
 module com.jwebmp.plugins.metrojs {
 	exports com.jwebmp.plugins.metrojs;
 	exports com.jwebmp.plugins.metrojs.enumerations;
@@ -19,10 +14,10 @@ module com.jwebmp.plugins.metrojs {
 	requires com.jwebmp.plugins.easingeffects;
 	requires com.jwebmp.guicedinjection;
 
-	provides IPageConfigurator with JQMetroPageConfigurator;
+	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.metrojs.JQMetroPageConfigurator;
 
-	provides IGuiceScanJarExclusions with com.jwebmp.plugins.metrojs.implementations.JQMetroExclusionsModule;
-	provides IGuiceScanModuleExclusions with com.jwebmp.plugins.metrojs.implementations.JQMetroExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.metrojs.implementations.JQMetroExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.metrojs.implementations.JQMetroExclusionsModule;
 
 	opens com.jwebmp.plugins.metrojs to com.fasterxml.jackson.databind, com.jwebmp.core;
 	opens com.jwebmp.plugins.metrojs.interfaces to com.fasterxml.jackson.databind, com.jwebmp.core;
