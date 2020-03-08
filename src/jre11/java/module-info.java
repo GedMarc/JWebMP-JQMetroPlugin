@@ -16,7 +16,6 @@ module com.jwebmp.plugins.metrojs {
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.metrojs.JQMetroPageConfigurator;
 
-	provides com.guicedee.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.metrojs.implementations.JQMetroExclusionsModule;
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.metrojs.implementations.JQMetroExclusionsModule;
 
 	opens com.jwebmp.plugins.metrojs to com.fasterxml.jackson.databind, com.jwebmp.core;
