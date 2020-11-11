@@ -28,7 +28,7 @@ import com.jwebmp.plugins.metrojs.interfaces.JQMetroChildren;
 import com.jwebmp.plugins.metrojs.interfaces.JQMetroTileAttributes;
 import com.jwebmp.plugins.metrojs.interfaces.JQMetroTileChildren;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * A Tile

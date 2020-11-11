@@ -7,7 +7,7 @@ import com.jwebmp.core.base.html.Span;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.metrojs.interfaces.JQMetroTileChildren;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public class TileFace<J extends TileFace<J>>
 		extends DivSimple<J>

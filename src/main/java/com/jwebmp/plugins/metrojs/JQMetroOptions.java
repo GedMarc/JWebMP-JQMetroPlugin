@@ -25,7 +25,7 @@ import com.jwebmp.plugins.metrojs.enumerations.JQMetroBounceDirections;
 import com.jwebmp.plugins.metrojs.enumerations.JQMetroModes;
 import com.jwebmp.plugins.metrojs.enumerations.JQMetroSwapOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 

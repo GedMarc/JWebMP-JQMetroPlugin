@@ -20,7 +20,7 @@ import com.jwebmp.plugins.metrojs.enumerations.TileAccentThemes;
 import com.jwebmp.plugins.metrojs.enumerations.TileCount;
 import com.jwebmp.plugins.metrojs.enumerations.TileProportions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author GedMarc

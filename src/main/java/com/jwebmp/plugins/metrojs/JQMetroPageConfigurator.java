@@ -22,7 +22,7 @@ import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.metrojs.references.JQMetroCSSReference;
 import com.jwebmp.plugins.metrojs.references.JQMetroJavascriptReference;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author GedMarc

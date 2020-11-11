@@ -25,7 +25,7 @@ import com.jwebmp.plugins.metrojs.interfaces.JQMetroEvents;
 import com.jwebmp.plugins.metrojs.interfaces.JQMetroFeatures;
 import com.jwebmp.plugins.metrojs.tiles.Tile;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * The implementation of JQuery Metro JS http://www.drewgreenwell.com/projects/metrojs
