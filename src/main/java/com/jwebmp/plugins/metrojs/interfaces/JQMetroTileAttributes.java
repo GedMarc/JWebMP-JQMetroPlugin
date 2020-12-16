@@ -16,10 +16,12 @@
  */
 package com.jwebmp.plugins.metrojs.interfaces;
 
+import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
+
 /**
  * @author GedMarc
  */
-public interface JQMetroTileAttributes
+public interface JQMetroTileAttributes extends AttributeDefinitions
 {
 
 }

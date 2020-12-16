@@ -18,6 +18,7 @@ package com.jwebmp.plugins.metrojs;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.metrojs.references.JQMetroCSSReference;
 import com.jwebmp.plugins.metrojs.references.JQMetroJavascriptReference;
@@ -39,7 +40,12 @@ import jakarta.validation.constraints.NotNull;
 		pluginSourceUrl = "http://www.drewgreenwell.com/projects/metrojs/theme-generator",
 		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-JQMetroPlugin/wiki",
 		pluginOriginalHomepage = "http://www.drewgreenwell.com/projects/metrojs",
-		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQMetroPlugin.jar/download")
+		pluginDownloadUrl = "https://mvnrepository.com/artifact/com.jwebmp.plugins.jquery/jwebmp-metro-tiles",
+		pluginGroupId = "com.jwebmp.plugins.jquery",
+		pluginArtifactId = "jwebmp-metro-tiles",
+		pluginModuleName = "com.jwebmp.plugins.metrojs",
+		pluginStatus = PluginStatus.Released
+)
 public class JQMetroPageConfigurator
 		implements IPageConfigurator<JQMetroPageConfigurator>
 {

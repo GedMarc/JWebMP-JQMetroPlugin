@@ -11,7 +11,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class TileFace<J extends TileFace<J>>
 		extends DivSimple<J>
-		implements JQMetroTileChildren<IComponentHierarchyBase, J>
+		implements JQMetroTileChildren
 {
 	/**
 	 * Creates a new tile face for display

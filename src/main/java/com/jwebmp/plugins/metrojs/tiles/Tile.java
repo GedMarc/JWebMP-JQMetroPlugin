@@ -42,9 +42,9 @@ import jakarta.validation.constraints.NotNull;
  * @version 1.0
  * @since 13 Sep 2013
  */
-public abstract class Tile<A extends Enum & JQMetroTileAttributes & AttributeDefinitions, J extends Tile<A, J>>
+public abstract class Tile<A extends Enum<?> & JQMetroTileAttributes & AttributeDefinitions, J extends Tile<A, J>>
 		extends Div<JQMetroTileChildren, A, GlobalFeatures, GlobalEvents, J>
-		implements JQMetroChildren<JQMetroTileChildren, J>, IMetroTile<J>
+		implements JQMetroChildren, IMetroTile<J>
 {
 
 

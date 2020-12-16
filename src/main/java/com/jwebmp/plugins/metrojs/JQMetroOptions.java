@@ -43,8 +43,6 @@ import java.util.List;
 public class JQMetroOptions<J extends JQMetroOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	private JQMetroModes mode;
 	private Integer speed;
 	private Integer initDelay;

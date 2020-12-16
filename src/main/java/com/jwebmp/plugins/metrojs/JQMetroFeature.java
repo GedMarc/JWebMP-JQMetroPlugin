@@ -28,11 +28,11 @@ import static com.jwebmp.plugins.metrojs.JQMetroPageConfigurator.*;
  * @since 2013/01/16
  */
 public class JQMetroFeature
-		extends Feature<JQMetroFeature, JQMetroOptions, JQMetroFeature>
+		extends Feature<JQMetroFeature, JQMetroOptions<?>, JQMetroFeature>
 {
 
 
-	private JQMetroOptions options;
+	private JQMetroOptions<?> options;
 	private boolean rebind;
 
 	/**
@@ -41,7 +41,7 @@ public class JQMetroFeature
 	 *
 	 * @param forComponent
 	 */
-	public JQMetroFeature(JQMetroTiles forComponent)
+	public JQMetroFeature(JQMetroTiles<?> forComponent)
 	{
 		super("JQMetroFeature");
 		setComponent(forComponent);
@@ -66,11 +66,11 @@ public class JQMetroFeature
 	 * @return
 	 */
 	@Override
-	public JQMetroOptions getOptions()
+	public JQMetroOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQMetroOptions();
+			options = new JQMetroOptions<>();
 		}
 		return options;
 	}
