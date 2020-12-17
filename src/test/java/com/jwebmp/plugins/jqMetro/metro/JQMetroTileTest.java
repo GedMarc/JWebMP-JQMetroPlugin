@@ -41,7 +41,7 @@ public class JQMetroTileTest
 	@Test
 	public void testJS()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		JQMetroTiles instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
@@ -54,7 +54,7 @@ public class JQMetroTileTest
 	@Test
 	public void testGroup()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		JQMetroTiles instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
@@ -67,7 +67,7 @@ public class JQMetroTileTest
 	@Test
 	public void testJavascriptLinks()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		JQMetroTiles instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
@@ -80,7 +80,7 @@ public class JQMetroTileTest
 	@Test
 	public void testSlideTile()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		JQMetroTiles<?> instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
@@ -94,7 +94,7 @@ public class JQMetroTileTest
 	@Test
 	public void testFlipTile()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		JQMetroTiles<?> instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
@@ -108,7 +108,7 @@ public class JQMetroTileTest
 	@Test
 	public void testCarousel()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		JQMetroTiles<?> instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Cobalt);
@@ -124,7 +124,7 @@ public class JQMetroTileTest
 	@Test
 	public void testFlipListTile()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		JQMetroTiles<?> instance = new JQMetroTiles();
 		instance.setID("id");
 		instance.setTheme(TileAccentThemes.Mauve);
