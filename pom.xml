@@ -10,7 +10,7 @@
     <groupId>com.jwebmp.plugins.jquery</groupId>
     <artifactId>jwebmp-metro-tiles</artifactId>
     <packaging>jar</packaging>
-
+    <version>0.0.0_0-SNAPSHOT</version>
     <name>Metro Tiles Plugin</name>
     <description>The JWebSwing implementation for JQuery Metro Tiles Plugin</description>
     <url>https://github.com/GedMarc/JWebSwing-JQMetroPlugin</url>
