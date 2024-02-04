@@ -8,7 +8,7 @@ module com.jwebmp.plugins.metrojs {
 	exports com.jwebmp.plugins.metrojs.tiles;
 
 	requires com.jwebmp.core;
-	requires com.guicedee.logmaster;
+	
 
 	requires jakarta.validation;
 	requires java.logging;
